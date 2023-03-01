@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#724EA0"
     tools:context=".MainActivity">
 
     <TextView
@@ -11,7 +12,7 @@
         android:layout_width="413dp"
         android:layout_height="76dp"
         android:fontFamily="sans-serif-black"
-        android:text="@string/TextOne"
+        android:text="@string/TextOneLogin"
         android:textAlignment="center"
         android:textSize="60sp"
         android:textStyle="bold"
@@ -27,11 +28,12 @@
         android:id="@+id/TitleID_description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="serif"
         android:text="@string/textTwo"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.529"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TitleLoginPage" />
 
@@ -40,6 +42,7 @@
         android:layout_width="297dp"
         android:layout_height="60dp"
         android:layout_marginTop="56dp"
+        android:autofillHints=""
         android:ems="10"
         android:hint="@string/email_addressHint"
         android:inputType="textEmailAddress"
@@ -47,22 +50,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TitleID_description"
-        android:autofillHints="" />
+        app:layout_constraintTop_toBottomOf="@+id/TitleID_description" />
 
     <EditText
         android:id="@+id/editTextTextPassword"
         android:layout_width="297dp"
         android:layout_height="60dp"
         android:layout_marginTop="56dp"
+        android:autofillHints=""
         android:ems="10"
         android:hint="@string/LoginPasswordHint"
         android:inputType="textPassword"
         android:textColorHint="#757575"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress"
-        android:autofillHints="" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
 
     <Button
         android:id="@+id/button"
