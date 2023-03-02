@@ -31,8 +31,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/createAccount"
-        android:layout_width="370dp"
-        android:layout_height="645dp"
+        android:layout_width="365dp"
+        android:layout_height="667dp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="29dp"
@@ -62,30 +62,27 @@
 
         <TextView
             android:id="@+id/TitleRegisterPage"
-            android:layout_width="264dp"
-            android:layout_height="62dp"
-            android:layout_marginTop="29dp"
-            android:layout_marginEnd="43dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="92dp"
+            android:layout_marginEnd="100dp"
             android:fontFamily="sans-serif-black"
             android:text="@string/TextOne"
             android:textAlignment="center"
             android:textColor="#252427"
-            android:textSize="34sp"
+            android:textSize="24sp"
             android:textStyle="bold"
             android:typeface="normal"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imageView4"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/imageView4"
-            android:layout_width="52dp"
-            android:layout_height="43dp"
+            android:layout_width="64dp"
+            android:layout_height="49dp"
             android:layout_marginTop="29dp"
-            android:layout_marginBottom="67dp"
-            app:layout_constraintBottom_toTopOf="@+id/NameRegisterText"
-            app:layout_constraintEnd_toStartOf="@+id/TitleRegisterPage"
-            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginEnd="154dp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/splash_screen_logoo" />
 
@@ -94,7 +91,7 @@
             android:layout_width="319dp"
             android:layout_height="48dp"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="59dp"
+            android:layout_marginTop="40dp"
             android:layout_marginEnd="27dp"
             android:layout_marginBottom="24dp"
             android:ems="10"
@@ -102,6 +99,7 @@
             android:inputType="textPersonName"
             app:layout_constraintBottom_toTopOf="@+id/emailRegisterText"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/TitleRegisterPage" />
 
@@ -118,6 +116,7 @@
             android:inputType="textPersonName"
             app:layout_constraintBottom_toTopOf="@+id/passwordRegisterText"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/NameRegisterText" />
 
@@ -151,6 +150,7 @@
             android:inputType="textPassword"
             app:layout_constraintBottom_toTopOf="@+id/RegisterButton"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/passwordRegisterText" />
 
@@ -159,13 +159,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="108dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="12dp"
             android:layout_marginEnd="106dp"
             android:backgroundTint="#350D75"
             android:text="@string/register_nowText"
             android:textColor="@color/white"
             app:iconTint="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.444"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/confirmPasswordRegisterText" />
 
@@ -194,7 +195,7 @@
             app:layout_constraintEnd_toStartOf="@+id/termsAndConditions"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/confirmPasswordRegisterText"
-            app:layout_constraintVertical_bias="0.629"
+            app:layout_constraintVertical_bias="0.564"
             tools:ignore="TouchTargetSizeCheck" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
