@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "559715001674",
+    "project_id": "gibbslibrary-c6407",
+    "storage_bucket": "gibbslibrary-c6407.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:559715001674:android:4d7ad0c6a88b1811a18db3",
+        "android_client_info": {
+          "package_name": "uk.ac.tees.b1448179.gibbse_library"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "559715001674-gpa8rj8hod5e49lij3hsjdsv18m6aokv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFiGtXbsWuyuVeNDTvFMCaFi-8R7exVQM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "559715001674-4l9hac8cc99ockfun9vm4psfpggg1rg4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

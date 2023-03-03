@@ -22,4 +22,6 @@
     <string name="powered_by_gibbs_techText">Powered by Gibbs Tech</string>
     <string name="gibbs_libraryText">Gibbs Library</string>
     <string name="full_name">Full Name</string>
+    <string name="passwordRegisterHint">Password</string>
+    <string name="textDisplay">STAY TUNED! GIBBS LIBRARY IS COMING!</string>
 </resources>
