@@ -86,7 +86,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="6dp"
-        android:text="@string/gibbs_libraryText"
+        android:text="@string/gibbs_library_textBanner"
         android:textColor="#393043"
         android:textSize="48sp"
         android:textStyle="bold"

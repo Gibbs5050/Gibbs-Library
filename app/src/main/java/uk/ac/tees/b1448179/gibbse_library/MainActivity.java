@@ -21,7 +21,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     //declare variables
-    private TextView register;
+    private TextView register,forgotPassword,loginHomePage;
     private EditText editLoginTextEmail, editLoginTextPassword;
     private Button buttonLogin;
 
@@ -32,18 +32,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-    //set Action listener
+     //initialise variables and set action listener
         register = (TextView) findViewById(R.id.RegisterLoginID);
         register.setOnClickListener(this);
 
-        //initialise variables
         buttonLogin = (Button) findViewById(R.id.buttonLogin);
         buttonLogin.setOnClickListener(this);
         editLoginTextEmail = (EditText) findViewById(R.id.editLoginTextEmail);
         editLoginTextPassword = (EditText) findViewById(R.id.editLoginTextPassword);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
         mAuth = FirebaseAuth.getInstance();
-
+        forgotPassword = (TextView) findViewById(R.id.forgotPassword);
+        forgotPassword.setOnClickListener(this); //set on click listener
+        loginHomePage = (TextView) findViewById(R.id.loginHomePage);
+        loginHomePage.setOnClickListener(this);
     }
 
     //create the method that implements view on click listener
@@ -51,10 +53,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.RegisterLoginID:
-                startActivity(new Intent(this,RegisterUser.class));
+                startActivity(new Intent(this,RegisterUser.class)); //redirect to register layout
                 break;
             case R.id.buttonLogin:
-                userLogin();
+                userLogin();     //login user
+                break;
+            case R.id.forgotPassword:
+                startActivity(new Intent(this,IForgotPassword.class)); //redirect to forgot password layout
+                break;
+            case R.id.loginHomePage:
+                startActivity(new Intent(this,HomePage.class)); //redirect to homepage layout
                 break;
 
         }

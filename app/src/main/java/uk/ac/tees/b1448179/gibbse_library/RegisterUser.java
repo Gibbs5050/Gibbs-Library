@@ -24,7 +24,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class RegisterUser extends AppCompatActivity implements View.OnClickListener {
 
-    private ImageView banner;
+   // private ImageView banner;    ToDo - create banner for navigation
     private TextView registerUser,editRegisterSignIn;
     private EditText editTextFullName, editTextAge, editTextEmail, editTextPassword;
     private ProgressBar progressBar;
@@ -36,8 +36,8 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_register_user);
 
         mAuth = FirebaseAuth.getInstance();
-        banner = (ImageView) findViewById(R.id.banner);
-        banner.setOnClickListener(this);
+       // banner = (ImageView) findViewById(R.id.banner); ToDo use banner by setting onclick
+       // banner.setOnClickListener(this);
 
         registerUser = (Button) findViewById(R.id.registerButton);
         registerUser.setOnClickListener(this);
@@ -56,9 +56,9 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.banner:
-                startActivity(new Intent(this, MainActivity.class));
-                break;
+          //  case R.id.banner:
+               // startActivity(new Intent(this, MainActivity.class));
+               // break;
             case R.id.registerButton:
                 registerUser();
                 //navigate to sign in if already created an account
@@ -115,7 +115,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
                                                 if (task.isSuccessful()){
                                                     Toast.makeText(RegisterUser.this, "User Registration Successful!", Toast.LENGTH_SHORT).show();
                                                     progressBar.setVisibility(View.VISIBLE);
-                                                    startActivity(new Intent(RegisterUser.this,MainActivity.class));  //redirect to login layout
+                                                   // startActivity(new Intent(RegisterUser.this,MainActivity.class));  //redirect to login layout
 
 
                                                 }else{
