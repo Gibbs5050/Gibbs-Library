@@ -26,4 +26,11 @@
     <string name="textDisplay">STAY TUNED! GIBBS LIBRARY IS COMING!</string>
     <string name="gibbs_library_textBanner">Gibbs Library</string>
     <string name="landing_get_started">Get Started</string>
+    <string name="homepage_log_out">LOG OUT</string>
+    <string name="user_full_name">Full Name:</string>
+    <string name="user_age">Age:</string>
+    <string name="user_email_address">Email Address:</string>
+    <string name="user_log_out">Log out</string>
+    <string name="user_welcome">Welcome</string>
+    <string name="user_return_to_home_page">Return to Home Page!</string>
 </resources>
