@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#1A1A1B"
+    android:background="@drawable/bookaholic_background"
     tools:context=".LandingPage">
 
     <TextView
@@ -14,10 +14,10 @@
         android:layout_marginTop="8dp"
         android:fontFamily="serif"
         android:text="@string/textTwo"
-        android:textColor="#B794EA"
+        android:textColor="#E3BF16"
         android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="@string/gibbs_library_textBanner"
-        android:textColor="#9E6CD6"
+        android:textColor="#F8CB1A"
         android:textSize="60sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -37,24 +37,30 @@
 
     <ImageView
         android:id="@+id/imageView5"
-        android:layout_width="636dp"
-        android:layout_height="491dp"
+        android:layout_width="233dp"
+        android:layout_height="350dp"
         android:layout_marginTop="44dp"
         android:layout_marginBottom="38dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/titleID_description3"
+        app:layout_constraintVertical_bias="0.251"
         app:srcCompat="@drawable/bookaholic_black" />
 
     <Button
         android:id="@+id/landingButtonGetStarted"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="4dp"
-        android:text="Get Started"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView5"
+        android:layout_marginTop="56dp"
+        android:layout_marginBottom="87dp"
+        android:background="#AA6EED"
+        android:backgroundTint="#FFFFFF"
+        android:text="@string/landing_get_started"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5"
+        tools:ignore="TextContrastCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>
