@@ -8,28 +8,17 @@
     android:background="@drawable/bookaholic_background"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
-        android:layout_marginEnd="28dp"
-        android:text="@string/gibbs_library_textBanner"
-        android:textColor="#FEFCFF"
-        android:textSize="48sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <ImageView
-        android:id="@+id/bannerReset2"
-        android:layout_width="63dp"
-        android:layout_height="61dp"
-        android:layout_marginTop="68dp"
-        app:layout_constraintEnd_toStartOf="@+id/textView"
+        android:id="@+id/imageView7"
+        android:layout_width="376dp"
+        android:layout_height="689dp"
+        app:layout_constraintBottom_toBottomOf="@+id/progressBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.457"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/splash_screen_logoo"
-        android:contentDescription="TODO" />
+        app:layout_constraintVertical_bias="0.464"
+        app:srcCompat="@drawable/shape_rectangle10" />
 
     <EditText
         android:id="@+id/editLoginTextEmail"
@@ -39,12 +28,12 @@
         android:layout_marginEnd="57dp"
         android:layout_marginBottom="85dp"
         android:autofillHints=""
-        android:backgroundTint="#FFFFFF"
+        android:backgroundTint="#030304"
         android:ems="10"
         android:hint="@string/email_addressHint"
         android:inputType="textEmailAddress"
         android:textColor="#EFE6E6"
-        android:textColorHint="#FFFFFF"
+        android:textColorHint="#0C0C0C"
         app:layout_constraintBottom_toBottomOf="@+id/editLoginTextPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -73,11 +62,11 @@
         android:layout_marginEnd="57dp"
         android:layout_marginBottom="162dp"
         android:autofillHints=""
-        android:backgroundTint="#FCFBFD"
+        android:backgroundTint="#030304"
         android:ems="10"
         android:hint="@string/LoginPasswordHint"
         android:inputType="textPassword"
-        android:textColorHint="#F4F3F3"
+        android:textColorHint="#070707"
         app:layout_constraintBottom_toBottomOf="@+id/forgotPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -87,13 +76,13 @@
         android:id="@+id/forgotPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="116dp"
+        android:layout_marginBottom="120dp"
         android:text="@string/ForgotPassword_textLink"
-        android:textColor="#FBF9F9"
+        android:textColor="#0B0A0A"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/loginHomePage"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.202"
+        app:layout_constraintHorizontal_bias="0.177"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -115,12 +104,13 @@
         android:layout_height="41dp"
         android:layout_centerInParent="true"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="140dp"
+        android:layout_marginTop="120dp"
         android:indeterminate="true"
         android:max="100"
         android:progress="0"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.458"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/forgotPassword"
         tools:ignore="MissingConstraints" />
@@ -129,11 +119,50 @@
         android:id="@+id/loginHomePage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="64dp"
-        android:text="Just want to Chill?      Skip to HomePage"
-        android:textColor="#ECE3E3"
+        android:layout_marginBottom="40dp"
+        android:text="@string/skip_to_homepage"
+        android:textColor="#FDFDFD"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.477"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/bannerReset2"
+        android:layout_width="29dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="72dp"
+        android:contentDescription="TODO"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toStartOf="@+id/linearLayout2"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView7"
+        app:layout_constraintVertical_bias="0.93"
+        app:srcCompat="@drawable/splash_screen_logoo" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="211dp"
+        android:layout_height="156dp"
+        android:layout_marginBottom="92dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/editLoginTextEmail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.56"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="308dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="112dp"
+            android:layout_marginEnd="140dp"
+            android:text="@string/gibbs_library_textBanner"
+            android:textColor="#0A090B"
+            android:textSize="34sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

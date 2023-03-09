@@ -35,7 +35,7 @@ public class ProfileActivity extends AppCompatActivity {
         user_return_home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ProfileActivity.this,HomePage.class));
+              startActivity(new Intent(ProfileActivity.this,HomePage.class));
             }
         });
         logout = (Button) findViewById(R.id.signOut);
@@ -43,6 +43,7 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
+                Toast.makeText(ProfileActivity.this, "Logged out successfully!!", Toast.LENGTH_LONG).show();
                 startActivity(new Intent(ProfileActivity.this,MainActivity.class));
             }
         });

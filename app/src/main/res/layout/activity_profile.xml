@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#9215A1"
+    android:background="#67157C"
     tools:context=".ProfileActivity">
 
     <TextView
@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="40dp"
         android:text="@string/user_email_address"
         android:textColor="#EFE7E7"
         app:layout_constraintStart_toEndOf="@+id/textView13"
@@ -22,8 +22,8 @@
         android:id="@+id/fullName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="84dp"
-        android:layout_marginEnd="176dp"
+        android:layout_marginTop="76dp"
+        android:layout_marginEnd="172dp"
         android:text="@string/user_full_name"
         android:textColor="#EFE7E7"
         app:layout_constraintEnd_toEndOf="parent"
@@ -33,7 +33,7 @@
         android:id="@+id/age"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="96dp"
+        android:layout_marginStart="56dp"
         android:layout_marginTop="36dp"
         android:text="@string/user_age"
         android:textColor="#EFE7E7"
@@ -56,12 +56,13 @@
         android:id="@+id/greeting"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="64dp"
         android:text="@string/user_welcome"
 
         android:textColor="#F8F1F1"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.397"
+        app:layout_constraintHorizontal_bias="0.268"
         app:layout_constraintStart_toEndOf="@+id/imageView2"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -85,21 +86,21 @@
         android:layout_height="99dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="28dp"
+        android:contentDescription="@string/user_profile_picture"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/bookaholic_user_smile"
-        tools:ignore="ImageContrastCheck"
-        android:contentDescription="TODO" />
+        app:srcCompat="@drawable/istockphoto_kete"
+        tools:ignore="ImageContrastCheck" />
 
     <TextView
         android:id="@+id/textView12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="40dp"
         android:text="@string/user_full_name"
         android:textColor="#EFE7E7"
         app:layout_constraintEnd_toStartOf="@+id/fullName"
-        app:layout_constraintHorizontal_bias="0.264"
+        app:layout_constraintHorizontal_bias="0.467"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
@@ -107,8 +108,8 @@
         android:id="@+id/textView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="40dp"
         android:text="@string/user_email_address"
         android:textColor="#EFE7E7"
         app:layout_constraintStart_toStartOf="parent"
@@ -118,7 +119,7 @@
         android:id="@+id/textView14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
+        android:layout_marginStart="88dp"
         android:layout_marginTop="36dp"
         android:text="@string/user_age"
         android:textColor="#EFE7E7"

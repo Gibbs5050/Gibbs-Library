@@ -33,4 +33,8 @@
     <string name="user_log_out">Log out</string>
     <string name="user_welcome">Welcome</string>
     <string name="user_return_to_home_page">Return to Home Page!</string>
+    <string name="skip_to_homepage">Skip to HomePage</string>
+    <string name="user_profile_picture">User profile picture</string>
+    <string name="landing_image">landing image</string>
+    <string name="welcome_to">Welcome to</string>
 </resources>
