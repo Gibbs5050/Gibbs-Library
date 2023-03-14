@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(new Intent(this,IForgotPassword.class)); //redirect to forgot password layout
                 break;
             case R.id.loginHomePage:
-                startActivity(new Intent(this,HomePage.class)); //redirect to homepage layout
+                startActivity(new Intent(this,MainActivity2.class)); //redirect to homepage layout
                 break;
 
         }
@@ -101,7 +101,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                     if (user.isEmailVerified()){
                         //redirect to user profile
-                        startActivity(new Intent(MainActivity.this, HomePage.class));
+                        startActivity(new Intent(MainActivity.this, MainActivity2.class));
                     } else{
                         user.sendEmailVerification();
                         Toast.makeText(MainActivity.this, "Check your Email to verify account", Toast.LENGTH_LONG).show();

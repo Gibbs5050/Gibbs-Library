@@ -37,4 +37,8 @@
     <string name="user_profile_picture">User profile picture</string>
     <string name="landing_image">landing image</string>
     <string name="welcome_to">Welcome to</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Dashboard</string>
+    <string name="profile_fragment_textview">Dashboard</string>
+    <string name="settings_fragment_textView">Dashboard</string>
 </resources>

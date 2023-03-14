@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#67157C"
+    android:background="#ECDAF1"
     tools:context=".ProfileActivity">
 
     <TextView
@@ -14,7 +14,7 @@
         android:layout_marginStart="48dp"
         android:layout_marginTop="40dp"
         android:text="@string/user_email_address"
-        android:textColor="#EFE7E7"
+        android:textColor="#050505"
         app:layout_constraintStart_toEndOf="@+id/textView13"
         app:layout_constraintTop_toBottomOf="@+id/fullName" />
 
@@ -25,7 +25,7 @@
         android:layout_marginTop="76dp"
         android:layout_marginEnd="172dp"
         android:text="@string/user_full_name"
-        android:textColor="#EFE7E7"
+        android:textColor="#050505"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/greeting" />
 
@@ -36,7 +36,7 @@
         android:layout_marginStart="56dp"
         android:layout_marginTop="36dp"
         android:text="@string/user_age"
-        android:textColor="#EFE7E7"
+        android:textColor="#050505"
         app:layout_constraintStart_toEndOf="@+id/textView14"
         app:layout_constraintTop_toBottomOf="@+id/emailAddress" />
 
@@ -44,9 +44,10 @@
         android:id="@+id/signOut"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="320dp"
+        android:layout_marginBottom="228dp"
+        android:backgroundTint="#D279EC"
         android:text="@string/user_log_out"
-        android:textColor="#EFE7E7"
+        android:textColor="#050505"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -59,7 +60,7 @@
         android:layout_marginTop="64dp"
         android:text="@string/user_welcome"
 
-        android:textColor="#F8F1F1"
+        android:textColor="#100F0F"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.268"
@@ -74,7 +75,7 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="137dp"
         android:text="@string/user_return_to_home_page"
-        android:textColor="#EFE7E7"
+        android:textColor="#050505"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -98,7 +99,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:text="@string/user_full_name"
-        android:textColor="#EFE7E7"
+        android:textColor="#050505"
         app:layout_constraintEnd_toStartOf="@+id/fullName"
         app:layout_constraintHorizontal_bias="0.467"
         app:layout_constraintStart_toStartOf="parent"
@@ -111,7 +112,7 @@
         android:layout_marginStart="28dp"
         android:layout_marginTop="40dp"
         android:text="@string/user_email_address"
-        android:textColor="#EFE7E7"
+        android:textColor="#050505"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
@@ -122,7 +123,7 @@
         android:layout_marginStart="88dp"
         android:layout_marginTop="36dp"
         android:text="@string/user_age"
-        android:textColor="#EFE7E7"
+        android:textColor="#050505"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView13" />
 </androidx.constraintlayout.widget.ConstraintLayout>
