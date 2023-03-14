@@ -38,7 +38,10 @@
     <string name="landing_image">landing image</string>
     <string name="welcome_to">Welcome to</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Dashboard</string>
+    <string name="home_page_fragment_textview">Welcome Home!</string>
     <string name="profile_fragment_textview">Dashboard</string>
     <string name="settings_fragment_textView">Dashboard</string>
+    <string name="user_settings_textview">User Settings</string>
+    <string name="admin_mode_switch">Admin Mode</string>
+    <string name="enter_email_address">Enter Email Address</string>
 </resources>

@@ -108,7 +108,7 @@
         android:indeterminate="true"
         android:max="100"
         android:progress="0"
-        android:visibility="visible"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.458"
         app:layout_constraintStart_toStartOf="parent"
