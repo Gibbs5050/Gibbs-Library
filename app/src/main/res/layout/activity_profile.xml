@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ECDAF1"
+    android:background="@drawable/background_zero"
     tools:context=".ProfileActivity">
 
     <TextView
@@ -44,10 +44,10 @@
         android:id="@+id/signOut"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="228dp"
-        android:backgroundTint="#D279EC"
+        android:layout_marginBottom="292dp"
+        android:backgroundTint="#201237"
         android:text="@string/user_log_out"
-        android:textColor="#050505"
+        android:textColor="#F3E8E8"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -90,7 +90,7 @@
         android:contentDescription="@string/user_profile_picture"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/istockphoto_kete"
+        app:srcCompat="@drawable/book_shelf"
         tools:ignore="ImageContrastCheck" />
 
     <TextView

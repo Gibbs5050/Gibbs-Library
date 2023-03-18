@@ -5,20 +5,8 @@
     android:id="@+id/createAccount"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bookaholic_background"
+    android:background="@drawable/background_zero"
     tools:context=".MainActivity">
-
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="376dp"
-        android:layout_height="689dp"
-        app:layout_constraintBottom_toBottomOf="@+id/progressBar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.457"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.464"
-        app:srcCompat="@drawable/shape_rectangle10" />
 
     <EditText
         android:id="@+id/editLoginTextEmail"
@@ -26,15 +14,15 @@
         android:layout_height="60dp"
         android:layout_marginStart="57dp"
         android:layout_marginEnd="57dp"
-        android:layout_marginBottom="85dp"
+        android:layout_marginBottom="12dp"
         android:autofillHints=""
         android:backgroundTint="#030304"
         android:ems="10"
         android:hint="@string/email_addressHint"
         android:inputType="textEmailAddress"
-        android:textColor="#EFE6E6"
-        android:textColorHint="#0C0C0C"
-        app:layout_constraintBottom_toBottomOf="@+id/editLoginTextPassword"
+        android:textColor="#131111"
+        android:textColorHint="#9A8A8A"
+        app:layout_constraintBottom_toTopOf="@+id/editLoginTextPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
@@ -45,7 +33,7 @@
         android:layout_height="48dp"
         android:layout_marginTop="46dp"
         android:layout_marginBottom="46dp"
-        android:backgroundTint="#350D75"
+        android:backgroundTint="#171122"
         android:text="@string/loginButton"
         android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/forgotPassword"
@@ -60,13 +48,13 @@
         android:layout_height="60dp"
         android:layout_marginStart="57dp"
         android:layout_marginEnd="57dp"
-        android:layout_marginBottom="162dp"
+        android:layout_marginBottom="172dp"
         android:autofillHints=""
         android:backgroundTint="#030304"
         android:ems="10"
         android:hint="@string/LoginPasswordHint"
         android:inputType="textPassword"
-        android:textColorHint="#070707"
+        android:textColorHint="#8E7D7D"
         app:layout_constraintBottom_toBottomOf="@+id/forgotPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -76,7 +64,7 @@
         android:id="@+id/forgotPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="120dp"
+        android:layout_marginBottom="136dp"
         android:text="@string/ForgotPassword_textLink"
         android:textColor="#0B0A0A"
         android:textSize="16sp"
@@ -89,10 +77,10 @@
         android:id="@+id/RegisterLoginID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="96dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="56dp"
         android:text="@string/Register_textLink"
-        android:textColor="#F3EFEF"
+        android:textColor="#2C2020"
         android:textSize="16sp"
         app:layout_constraintStart_toEndOf="@+id/forgotPassword"
         app:layout_constraintTop_toBottomOf="@+id/buttonLogin" />
@@ -121,7 +109,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="40dp"
         android:text="@string/skip_to_homepage"
-        android:textColor="#FDFDFD"
+        android:textColor="#302B37"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.477"
@@ -129,28 +117,26 @@
 
     <ImageView
         android:id="@+id/bannerReset2"
-        android:layout_width="29dp"
-        android:layout_height="30dp"
+        android:layout_width="35dp"
+        android:layout_height="49dp"
         android:layout_marginStart="72dp"
+        android:layout_marginBottom="4dp"
         android:contentDescription="TODO"
         app:layout_constraintBottom_toBottomOf="@+id/linearLayout2"
         app:layout_constraintEnd_toStartOf="@+id/linearLayout2"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView7"
-        app:layout_constraintVertical_bias="0.93"
-        app:srcCompat="@drawable/splash_screen_logoo" />
+        app:srcCompat="@drawable/bookaholic_user_smile" />
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="211dp"
-        android:layout_height="156dp"
-        android:layout_marginBottom="92dp"
+        android:layout_width="275dp"
+        android:layout_height="165dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/editLoginTextEmail"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.56"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintHorizontal_bias="0.698"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/textView"
@@ -159,8 +145,8 @@
             android:layout_marginTop="112dp"
             android:layout_marginEnd="140dp"
             android:text="@string/gibbs_library_textBanner"
-            android:textColor="#0A090B"
-            android:textSize="34sp"
+            android:textColor="#453555"
+            android:textSize="40sp"
             android:textStyle="bold" />
 
     </LinearLayout>

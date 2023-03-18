@@ -5,14 +5,14 @@
     android:id="@+id/constraint"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#DEB1F0"
+    android:background="#F6F6F8"
     tools:context=".MainActivity2">
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#BA95FA"
+        android:background="#36194A"
         app:labelVisibilityMode="labeled"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -22,18 +22,18 @@
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView"
         android:name="androidx.navigation.fragment.NavHostFragment"
-        android:layout_width="417dp"
-        android:layout_height="631dp"
-        android:layout_marginBottom="8dp"
+        android:layout_width="410dp"
+        android:layout_height="675dp"
+        android:background="#EAE3FD"
         android:soundEffectsEnabled="false"
         app:defaultNavHost="true"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
         app:navGraph="@navigation/my_homepage_nav" />
+
+    <!--to swipe between tabs/fragments-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

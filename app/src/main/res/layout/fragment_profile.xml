@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ECDAF1"
+    android:background="#EAE3FD"
     tools:context=".ProfileActivity">
 
     <TextView
@@ -47,7 +47,7 @@
         android:layout_marginBottom="228dp"
         android:backgroundTint="#D279EC"
         android:text="@string/user_log_out"
-        android:textColor="#050505"
+        android:textColor="#1E1D1D"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"

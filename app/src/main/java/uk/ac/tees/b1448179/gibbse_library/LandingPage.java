@@ -5,10 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class LandingPage extends AppCompatActivity implements View.OnClickListener {
 
+    private TextView appDesc;
     private Button landingButtonGetStarted;
 
     @Override
@@ -18,6 +22,12 @@ public class LandingPage extends AppCompatActivity implements View.OnClickListen
 
         landingButtonGetStarted = (Button) findViewById(R.id.landingButtonGetStarted);
         landingButtonGetStarted.setOnClickListener(this);
+        appDesc = findViewById(R.id.titleID_description3);
+        //animation
+        Animation anim = AnimationUtils.loadAnimation(this, R.anim.landing_anim);
+        appDesc.setAnimation(anim);
+
+
     }
 
     @Override

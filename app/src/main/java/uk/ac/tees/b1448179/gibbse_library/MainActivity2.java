@@ -42,7 +42,7 @@ public class MainActivity2 extends AppCompatActivity {
         });
 
     }
-//create method replacefragment
+//create method replacefragment to switch between fragments
     private void replaceFragment(Fragment fragment) {
 
         FragmentManager fragmentManager = getSupportFragmentManager();
