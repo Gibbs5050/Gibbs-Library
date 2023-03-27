@@ -97,7 +97,7 @@
         android:id="@+id/registerButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="36dp"
+        android:layout_marginBottom="40dp"
         android:backgroundTint="#070707"
         android:text="@string/register_nowText"
         android:textColor="@color/white"
@@ -113,20 +113,20 @@
         android:text="Yes, I agree to the terms of services. Including User Agreements and Privacy Policy"
         android:textColor="#171515"
         app:layout_constraintBottom_toTopOf="@+id/editRegisterSignIn"
-        app:layout_constraintStart_toEndOf="@+id/checkBox" />
+        app:layout_constraintStart_toEndOf="@+id/checkBoxTerms" />
 
     <CheckBox
-        android:id="@+id/checkBox"
+        android:id="@+id/checkBoxTerms"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
-        android:layout_marginBottom="132dp"
         android:minWidth="48dp"
         android:textColor="#656060"
         android:textColorHighlight="#3C3737"
         android:textColorLink="#3C3737"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/termsAndConditions"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/termsAndConditions"
         tools:ignore="TouchTargetSizeCheck" />
 
     <TextView
@@ -152,5 +152,24 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints" />
+
+    <AutoCompleteTextView
+        android:id="@+id/gender"
+        android:layout_width="319dp"
+        android:layout_height="50dp"
+        android:completionThreshold="1"
+        android:ems="10"
+        android:hint="Gender"
+        android:textColor="#0C0B0B"
+        android:textColorHint="#9E9696"
+        app:layout_constraintBottom_toTopOf="@+id/registerButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.597"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passwordRegisterText"
+
+
+
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

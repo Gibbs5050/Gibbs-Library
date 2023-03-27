@@ -1,8 +1,11 @@
 package uk.ac.tees.b1448179.gibbse_library;
 
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -19,8 +22,18 @@ public class MainActivity2 extends AppCompatActivity {
       //  setContentView(R.layout.activity_main2);
         binding = ActivityMain2Binding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        //replaceFragment(new DashboardFragment());
 
+      /* ToDo implement drawer on dashboard fragment
+
+      final DrawerLayout drawerLayout = findViewById(R.id.drawerLayout);
+        findViewById(R.id.imageMenu).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                drawerLayout.openDrawer(GravityCompat.START);
+            }
+        }); */
+
+        //replaceFragment(new DashboardFragment());
         binding.bottomNavigationView.setOnItemSelectedListener(item -> {
 
             switch (item.getItemId()){

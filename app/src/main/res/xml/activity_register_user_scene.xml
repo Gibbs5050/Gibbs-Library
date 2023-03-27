@@ -68,7 +68,7 @@
             android:layout_marginBottom="52dp"
             motion:layout_constraintBottom_toTopOf="@+id/editRegisterSignIn"
             android:layout_width="290dp"
-            motion:layout_constraintStart_toEndOf="@+id/checkBox"
+            motion:layout_constraintStart_toEndOf="@+id/checkBoxTerms"
             android:layout_marginLeft="12dp"
             android:layout_marginStart="12dp"
             android:id="@+id/termsAndConditions" />
@@ -80,7 +80,7 @@
             motion:layout_constraintStart_toStartOf="parent"
             android:layout_marginLeft="24dp"
             android:layout_marginStart="24dp"
-            android:id="@+id/checkBox" />
+            android:id="@+id/checkBoxTerms" />
         <Constraint
             android:layout_height="wrap_content"
             motion:layout_constraintStart_toStartOf="parent"

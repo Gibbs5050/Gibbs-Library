@@ -9,7 +9,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -29,6 +32,8 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
     private EditText editTextFullName, editTextAge, editTextEmail, editTextPassword;
     private ProgressBar progressBar;
     private FirebaseAuth mAuth;
+    private CheckBox checkBoxTerms;
+    private AutoCompleteTextView editTextGender;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,11 +49,12 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
 
         editTextFullName = (EditText) findViewById(R.id.nameRegisterText);
         editTextAge = (EditText) findViewById(R.id.ageRegisterText);
+        editTextGender = (AutoCompleteTextView)findViewById(R.id.gender);
         editTextEmail = (EditText) findViewById(R.id.emailRegisterText);
         editTextPassword = (EditText) findViewById(R.id.passwordRegisterText);
         editRegisterSignIn = (TextView) findViewById(R.id.editRegisterSignIn);
         editRegisterSignIn.setOnClickListener(this); //set on click listener
-
+        checkBoxTerms = (CheckBox) findViewById(R.id.checkBoxTerms);
         progressBar = (ProgressBar) findViewById(R.id.progressBar2);
 
     }
@@ -60,11 +66,22 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
                // startActivity(new Intent(this, MainActivity.class));
                // break;
             case R.id.registerButton:
-                registerUser();
+
+                //implement must agree to terms and conditions using if or case break out.
+                if (checkBoxTerms.isChecked()){
+                    registerUser();
+                }
+                else {
+                    Toast.makeText(RegisterUser.this,"You must agree to terms and conditions",Toast.LENGTH_SHORT).show();
+                }
+                break;
+
                 //navigate to sign in if already created an account
             case R.id.editRegisterSignIn:
                 startActivity(new Intent(this,MainActivity.class));
-
+                break;
+            default:
+                break;
         }
     }
     private void registerUser(){
@@ -73,6 +90,9 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
             String password = editTextPassword.getText().toString().trim();
             String fullName = editTextFullName.getText().toString().trim();
             String age = editTextAge.getText().toString().trim();
+            String gender =  editTextGender.getText().toString().trim();
+
+
 
             if(fullName.isEmpty()){
                 editTextFullName.setError("Full Name is required!");
@@ -96,15 +116,29 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
                 editTextPassword.requestFocus();
                 return;
             }
+        // handle invalid gender input
+        if (!gender.matches("^(male|female|Male|Female)$")) {
+            editTextGender.setError("Please use either male or female gender");
+            editTextGender.requestFocus();
+            return;
+        }
+        //create autocomplete for gender options
+        AutoCompleteTextView editTextGender = findViewById(R.id.gender);
+        String[] suggestions = getResources().getStringArray(R.array.suggestions);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, suggestions);
+        editTextGender.setAdapter(adapter);
 
-            //use progress bar for indicating if user has register on firebase or not
+
+
+
+        //use progress bar for indicating if user has register on firebase or not
             progressBar.setVisibility(View.VISIBLE);
             mAuth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()){
-                                User user = new User(fullName, age, email); //create object for user and a class
+                                User user = new User(fullName, age,  email, gender); //create object for user and a class
 
                                 //send user data to firebase real time database
                                 FirebaseDatabase.getInstance().getReference("Users")

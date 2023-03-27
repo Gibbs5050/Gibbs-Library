@@ -32,9 +32,9 @@ import com.google.firebase.database.ValueEventListener;
  */
 public class ProfileFragment extends Fragment {
 
+    private Button signOut;
 
-
-
+    FirebaseAuth auth;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -80,7 +80,25 @@ public class ProfileFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false);
+       View view = inflater.inflate(R.layout.fragment_profile, container, false);
+
+        signOut = view.findViewById(R.id.signOut);
+
+        auth = FirebaseAuth.getInstance();
+
+        signOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                auth.signOut();
+                startActivity(new Intent(getContext(),MainActivity.class));
+                Toast.makeText(getContext(), "Logged out successfully!!", Toast.LENGTH_LONG).show();
+
+
+            }
+        });
+
+       return view;
     }
 
   /*

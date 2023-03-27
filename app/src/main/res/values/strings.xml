@@ -44,4 +44,11 @@
     <string name="user_settings_textview">User Settings</string>
     <string name="admin_mode_switch">Admin Mode</string>
     <string name="enter_email_address">Enter Email Address</string>
+
+    //for gender suggestions
+    <string-array name="suggestions">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+
 </resources>

@@ -32,6 +32,8 @@ private Button logout,user_profile;
         user_profile.setOnClickListener(this);
 
     }
+
+
 //set on click for each scenario in homepage
     @Override
     public void onClick(View v) {
