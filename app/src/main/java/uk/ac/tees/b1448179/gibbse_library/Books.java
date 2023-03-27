@@ -13,6 +13,7 @@ public class Books extends AppCompatActivity {
     private String imageUrl;
     private String shortDesc;
     private String longDesc;
+    private boolean isExpanded; //for drop down of description
 
     //constructor
     public Books(int id, String name, String author, int pages, String imageUrl, String shortDesc, String longDesc) {
@@ -23,7 +24,18 @@ public class Books extends AppCompatActivity {
         this.imageUrl = imageUrl;
         this.shortDesc = shortDesc;
         this.longDesc = longDesc;
+        this.isExpanded = false;
     }
+
+    //getter and setter for dropdown
+    public boolean isExpanded() {
+        return isExpanded;
+    }
+
+    public void setExpanded(boolean expanded) {
+        isExpanded = expanded;
+    }
+
     //getters and setters
     public int getId() {
         return id;
