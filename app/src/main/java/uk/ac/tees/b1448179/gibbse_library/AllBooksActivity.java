@@ -28,7 +28,7 @@ public class AllBooksActivity extends AppCompatActivity {
         ArrayList<Books> books = new ArrayList<>();
 
         books.add(new Books(1,"Harry Potter and the Chamber of Secrets", "J. K. Rowling",2500,"https://m.media-amazon.com/images/I/51Q9uPHKhAL._SX324_BO1,204,203,200_.jpg",
-                "Description - The three firm friends, Harry, Ron and Hermione, are soon immersed in the daily round of Potions, Herbology, Charms, Defence Against the Dark Arts, and Quidditch. But then horrible and mysterious things begin to happen. Harry keeps hearing strange voices, sinister and dark messages appear on the wall, and then Ron's sister Ginny disappears...","Long description"));
+                "Description - An ancient prophecy seems to be coming true when a mysterious presence begins stalking the corridors of a school of magic and leaving its victims paralyzed.","Long description"));
         books.add(new Books(2,"Gulliver's Travels", "Jonathan Swift",1760,"https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/51-8gPee03L.jpg",
                 "Description - A keystone of English literature, \"Gulliver’s Travels\" was one of the books that gave birth to the novel form, though it did not yet have the rules of the genre as an organizing tool. A parody of the then popular travel narrative, \"Gulliver’s Travels\" combines adventure with savage satire, mocking English customs and the politics of the day","Long description"));
         books.add(new Books(3,"The beautyful ones are not yet born\n", "Ayi Kwei Armah",2000,"https://pictures.abebooks.com/inventory/31241979424.jpg",
