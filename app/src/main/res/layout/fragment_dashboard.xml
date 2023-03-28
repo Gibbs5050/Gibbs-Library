@@ -56,9 +56,9 @@
 
 
         <ImageView
-            android:id="@+id/imageView8"
-            android:layout_width="649dp"
-            android:layout_height="152dp"
+            android:id="@+id/imageViewSelectBook"
+            android:layout_width="629dp"
+            android:layout_height="219dp"
             android:layout_marginTop="28dp"
             android:contentDescription="select book"
             android:src="@drawable/shelf_image_view"
@@ -72,7 +72,7 @@
             android:layout_width="258dp"
             android:layout_height="48dp"
             android:layout_marginTop="16dp"
-            android:text="View All"
+            android:text="My Library"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.503"
             app:layout_constraintStart_toStartOf="parent"
@@ -99,43 +99,44 @@
             app:layout_constraintTop_toBottomOf="@+id/button_currentlyReadBooks" />
 
         <Button
-            android:id="@+id/myWishlist"
+            android:id="@+id/myFavorite"
             android:layout_width="258dp"
             android:layout_height="48dp"
             android:layout_marginTop="12dp"
-            android:text="My Wishlist"
+            android:text="My Favourite"
             app:layout_constraintEnd_toEndOf="@+id/button_alreadyReadBooks"
             app:layout_constraintStart_toStartOf="@+id/button_alreadyReadBooks"
             app:layout_constraintTop_toBottomOf="@+id/button_alreadyReadBooks" />
 
         <Button
-            android:id="@+id/myFavorite"
+            android:id="@+id/myDictionary"
             android:layout_width="258dp"
             android:layout_height="48dp"
             android:layout_marginTop="4dp"
-            android:text="My favorites"
-            app:layout_constraintEnd_toEndOf="@+id/myWishlist"
-            app:layout_constraintStart_toStartOf="@+id/myWishlist"
-            app:layout_constraintTop_toBottomOf="@+id/myWishlist" />
+            android:text="Go To My Dictionary"
+            app:layout_constraintEnd_toEndOf="@+id/myFavorite"
+            app:layout_constraintStart_toStartOf="@+id/myFavorite"
+            app:layout_constraintTop_toBottomOf="@+id/myFavorite" />
 
         <Button
             android:id="@+id/aboutApp"
             android:layout_width="258dp"
             android:layout_height="48dp"
             android:text="About"
-            app:layout_constraintEnd_toEndOf="@+id/myFavorite"
-            app:layout_constraintStart_toStartOf="@+id/myFavorite"
-            app:layout_constraintTop_toBottomOf="@+id/myFavorite" />
+            app:layout_constraintEnd_toEndOf="@+id/myDictionary"
+            app:layout_constraintStart_toStartOf="@+id/myDictionary"
+            app:layout_constraintTop_toBottomOf="@+id/myDictionary" />
 
         <TextView
             android:id="@+id/textView8"
             android:layout_width="165dp"
             android:layout_height="30dp"
-            android:layout_marginTop="16dp"
-            android:text="TextView"
+            android:layout_marginTop="4dp"
+            android:text="@string/gibbs_library_textBanner"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.565"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView8" />
+            app:layout_constraintTop_toBottomOf="@+id/imageViewSelectBook" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

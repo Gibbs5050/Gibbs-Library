@@ -28,23 +28,23 @@
         android:id="@+id/ageRegisterText"
         android:layout_width="321dp"
         android:layout_height="53dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="16dp"
         android:backgroundTint="#070707"
         android:ems="10"
         android:hint="Age"
         android:inputType="number"
         android:textColor="#000000"
         android:textColorHint="#9E9696"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.611"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/nameRegisterText"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/nameRegisterText"
         app:layout_constraintTop_toBottomOf="@+id/nameRegisterText" />
 
     <EditText
         android:id="@+id/emailRegisterText"
         android:layout_width="319dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginTop="12dp"
         android:autofillHints=""
         android:backgroundTint="#070707"
         android:ems="10"
@@ -52,58 +52,54 @@
         android:inputType="textPersonName"
         android:textColor="#0C0B0B"
         android:textColorHint="#9E9696"
-        app:layout_constraintBottom_toTopOf="@+id/passwordRegisterText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.597"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/ageRegisterText"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/ageRegisterText"
         app:layout_constraintTop_toBottomOf="@+id/ageRegisterText" />
 
     <EditText
         android:id="@+id/nameRegisterText"
         android:layout_width="319dp"
         android:layout_height="55dp"
+        android:layout_marginTop="32dp"
         android:backgroundTint="#070707"
         android:ems="10"
         android:hint="@string/full_name"
         android:inputType="textPersonName"
         android:textColor="#0B0A0A"
         android:textColorHint="#9E9696"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.597"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.242" />
+        app:layout_constraintEnd_toEndOf="@+id/TitleRegisterPage"
+        app:layout_constraintStart_toStartOf="@+id/TitleRegisterPage"
+        app:layout_constraintTop_toBottomOf="@+id/TitleRegisterPage" />
 
     <EditText
         android:id="@+id/passwordRegisterText"
         android:layout_width="319dp"
         android:layout_height="50dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="20dp"
         android:backgroundTint="#070707"
         android:ems="10"
         android:hint="@string/passwordRegisterHint"
         android:inputType="textPassword"
         android:textColor="#070606"
         android:textColorHint="#9E9696"
-        app:layout_constraintBottom_toTopOf="@+id/registerButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.597"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ageRegisterText"
-        app:layout_constraintVertical_bias="0.56" />
+        app:layout_constraintEnd_toEndOf="@+id/emailRegisterText"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/emailRegisterText"
+        app:layout_constraintTop_toBottomOf="@+id/emailRegisterText" />
 
     <Button
         android:id="@+id/registerButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="20dp"
         android:backgroundTint="#070707"
         android:text="@string/register_nowText"
         android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/termsAndConditions"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/gender"
+        app:layout_constraintStart_toStartOf="@+id/gender"
+        app:layout_constraintTop_toBottomOf="@+id/gender" />
 
     <TextView
         android:id="@+id/termsAndConditions"
@@ -113,6 +109,7 @@
         android:text="Yes, I agree to the terms of services. Including User Agreements and Privacy Policy"
         android:textColor="#171515"
         app:layout_constraintBottom_toTopOf="@+id/editRegisterSignIn"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/checkBoxTerms" />
 
     <CheckBox
@@ -157,19 +154,20 @@
         android:id="@+id/gender"
         android:layout_width="319dp"
         android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#070707"
         android:completionThreshold="1"
         android:ems="10"
         android:hint="Gender"
         android:textColor="#0C0B0B"
         android:textColorHint="#9E9696"
-        app:layout_constraintBottom_toTopOf="@+id/registerButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.597"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordRegisterText"
+        app:layout_constraintEnd_toEndOf="@+id/passwordRegisterText"
 
 
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/passwordRegisterText"
+        app:layout_constraintTop_toBottomOf="@+id/passwordRegisterText" />
 
-        />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

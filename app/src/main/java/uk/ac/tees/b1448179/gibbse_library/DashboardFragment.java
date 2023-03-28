@@ -1,7 +1,6 @@
 package uk.ac.tees.b1448179.gibbse_library;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -16,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 //import android.widget.EditText;
 
 
@@ -53,6 +53,14 @@ public class DashboardFragment extends Fragment {
 
         //private DashboardFragmentListener listener;
         //declaration and initialization
+        ImageView imageViewSelectBook = v.findViewById(R.id.imageViewSelectBook);
+        imageViewSelectBook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(DashboardFragment.this.getActivity(),AllBooksActivity.class);
+                DashboardFragment.this.startActivity(myIntent);
+            }
+        });
         Button button_viewAllBooks = v.findViewById(R.id.button_viewAllBooks);
         button_viewAllBooks.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,8 +70,8 @@ public class DashboardFragment extends Fragment {
             }
         });
         Button button_alreadyReadBooks = v.findViewById(R.id.button_alreadyReadBooks);
-        Button myWishlist = v.findViewById(R.id.myWishlist);
-        Button myFavorite = v.findViewById(R.id.myFavorite);
+        Button myWishlist = v.findViewById(R.id.myFavorite);
+        Button myFavorite = v.findViewById(R.id.myDictionary);
         Button aboutApp = v.findViewById(R.id.aboutApp);
         Button button_currentlyReadBooks = v.findViewById(R.id.button_currentlyReadBooks);
       button_currentlyReadBooks.setOnClickListener(new View.OnClickListener() {
