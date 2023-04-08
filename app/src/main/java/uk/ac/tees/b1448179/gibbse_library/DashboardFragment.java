@@ -57,11 +57,11 @@ public class DashboardFragment extends Fragment {
         imageViewSelectBook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myIntent = new Intent(DashboardFragment.this.getActivity(),AllBooksActivity.class);
+                Intent myIntent = new Intent(DashboardFragment.this.getActivity(),LibraryCatalogue.class);
                 DashboardFragment.this.startActivity(myIntent);
             }
         });
-        Button button_viewAllBooks = v.findViewById(R.id.button_viewAllBooks);
+        ImageView button_viewAllBooks = v.findViewById(R.id.button_viewAllBooks);
         button_viewAllBooks.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -69,11 +69,11 @@ public class DashboardFragment extends Fragment {
                 DashboardFragment.this.startActivity(myIntent); //implement the intent ie switch to the fragment required
             }
         });
-        Button button_alreadyReadBooks = v.findViewById(R.id.button_alreadyReadBooks);
-        Button myWishlist = v.findViewById(R.id.myFavorite);
-        Button myFavorite = v.findViewById(R.id.myDictionary);
+        ImageView button_alreadyReadBooks = v.findViewById(R.id.button_alreadyReadBooks);
+        Button myDictionary = v.findViewById(R.id.myDictionary);
+        Button myFavorite = v.findViewById(R.id.myFavorite);
         Button aboutApp = v.findViewById(R.id.aboutApp);
-        Button button_currentlyReadBooks = v.findViewById(R.id.button_currentlyReadBooks);
+        ImageView button_currentlyReadBooks = v.findViewById(R.id.button_currentlyReadBooks);
       button_currentlyReadBooks.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View v) {

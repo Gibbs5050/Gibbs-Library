@@ -27,9 +27,9 @@
     <string name="gibbs_library_textBanner">Gibbs Library</string>
     <string name="landing_get_started">Get Started</string>
     <string name="homepage_log_out">LOG OUT</string>
-    <string name="user_full_name">Full Name:</string>
-    <string name="user_age">Age:</string>
-    <string name="user_email_address">Email Address:</string>
+    <string name="user_full_name">Loading Full Name...</string>
+    <string name="user_age">Loading Age...</string>
+    <string name="user_email_address">Loading Email Address... </string>
     <string name="user_log_out">Log out</string>
     <string name="user_welcome">Welcome</string>
     <string name="user_return_to_home_page">Return to Home Page!</string>
@@ -44,6 +44,7 @@
     <string name="user_settings_textview">User Settings</string>
     <string name="admin_mode_switch">Admin Mode</string>
     <string name="enter_email_address">Enter Email Address</string>
+    <string name="todo">TODO</string>
 
     //for gender suggestions
     <string-array name="suggestions">

@@ -14,22 +14,53 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:backgroundTint="#F6F6F8"
+        android:background="#58AAC6"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <Button
+            android:id="@+id/aboutApp"
+            android:layout_width="99dp"
+            android:layout_height="124dp"
+            android:layout_marginStart="28dp"
+            android:backgroundTint="#062C3C"
+            android:text="About us"
+            android:textColor="#FFFFFF"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/myFavorite"
+            app:layout_constraintStart_toEndOf="@+id/myDictionary"
+            app:layout_constraintTop_toTopOf="@+id/myDictionary"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <Button
+            android:id="@+id/myDictionary"
+            android:layout_width="225dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="28dp"
+            android:backgroundTint="#062C3C"
+            android:text="Dictionary Mode"
+            android:textColor="#FFFFFF"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/button_viewAllBooks"
+            app:layout_constraintTop_toBottomOf="@+id/button_currentlyReadBooks"
+            app:srcCompat="@drawable/book_dictionary1" />
+
         <LinearLayout
             android:id="@+id/layoutToolbar"
             android:layout_width="match_parent"
             android:layout_height="?actionBarSize"
-            android:background="@color/colorPrimary"
+            android:background="#0E77A6"
             android:gravity="center_vertical"
             android:orientation="horizontal"
             android:paddingStart="15dp"
             android:paddingEnd="15dp"
             app:layout_constraintTop_toTopOf="parent">
+
             <ImageView
                 android:id="@+id/imageMenu"
                 android:layout_width="30dp"
@@ -57,86 +88,95 @@
 
         <ImageView
             android:id="@+id/imageViewSelectBook"
-            android:layout_width="629dp"
-            android:layout_height="219dp"
-            android:layout_marginTop="28dp"
+            android:layout_width="408dp"
+            android:layout_height="202dp"
+            android:layout_marginTop="24dp"
             android:contentDescription="select book"
-            android:src="@drawable/shelf_image_view"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.502"
+            app:layout_constraintHorizontal_bias="0.4"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/layoutToolbar" />
-
-        <Button
-            android:id="@+id/button_viewAllBooks"
-            android:layout_width="258dp"
-            android:layout_height="48dp"
-            android:layout_marginTop="16dp"
-            android:text="My Library"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.503"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView8" />
-
-        <Button
-            android:id="@+id/button_currentlyReadBooks"
-            android:layout_width="258dp"
-            android:layout_height="48dp"
-            android:layout_marginTop="8dp"
-            android:text="Continue Reading"
-            app:layout_constraintEnd_toEndOf="@+id/button_viewAllBooks"
-            app:layout_constraintStart_toStartOf="@+id/button_viewAllBooks"
-            app:layout_constraintTop_toBottomOf="@+id/button_viewAllBooks" />
-
-        <Button
-            android:id="@+id/button_alreadyReadBooks"
-            android:layout_width="258dp"
-            android:layout_height="48dp"
-            android:layout_marginTop="8dp"
-            android:text="Already Read Books"
-            app:layout_constraintEnd_toEndOf="@+id/button_currentlyReadBooks"
-            app:layout_constraintStart_toStartOf="@+id/button_currentlyReadBooks"
-            app:layout_constraintTop_toBottomOf="@+id/button_currentlyReadBooks" />
+            app:layout_constraintTop_toBottomOf="@+id/layoutToolbar"
+            app:srcCompat="@drawable/cat_shelve1" />
 
         <Button
             android:id="@+id/myFavorite"
-            android:layout_width="258dp"
-            android:layout_height="48dp"
-            android:layout_marginTop="12dp"
-            android:text="My Favourite"
-            app:layout_constraintEnd_toEndOf="@+id/button_alreadyReadBooks"
-            app:layout_constraintStart_toStartOf="@+id/button_alreadyReadBooks"
-            app:layout_constraintTop_toBottomOf="@+id/button_alreadyReadBooks" />
-
-        <Button
-            android:id="@+id/myDictionary"
-            android:layout_width="258dp"
-            android:layout_height="48dp"
-            android:layout_marginTop="4dp"
-            android:text="Go To My Dictionary"
-            app:layout_constraintEnd_toEndOf="@+id/myFavorite"
-            app:layout_constraintStart_toStartOf="@+id/myFavorite"
-            app:layout_constraintTop_toBottomOf="@+id/myFavorite" />
-
-        <Button
-            android:id="@+id/aboutApp"
-            android:layout_width="258dp"
-            android:layout_height="48dp"
-            android:text="About"
+            android:layout_width="225dp"
+            android:layout_height="60dp"
+            android:backgroundTint="#062C3C"
+            android:text="my Favourite"
+            android:textColor="#FFFFFF"
+            android:textSize="10sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="@+id/myDictionary"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/myDictionary"
             app:layout_constraintTop_toBottomOf="@+id/myDictionary" />
 
         <TextView
             android:id="@+id/textView8"
-            android:layout_width="165dp"
-            android:layout_height="30dp"
-            android:layout_marginTop="4dp"
-            android:text="@string/gibbs_library_textBanner"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.565"
+            android:layout_width="465dp"
+            android:layout_height="44dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/roundstyle"
+            android:backgroundTint="#BCE4F6"
+            android:text="MY LIBRARY"
+            android:textAlignment="center"
+            android:textColor="#010E10"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewSelectBook"
+            app:layout_constraintHorizontal_bias="0.56"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageViewSelectBook" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Visit Catalogue"
+            android:textAlignment="center"
+            android:textColor="#276277"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageViewSelectBook"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageViewSelectBook"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ImageView
+            android:id="@+id/button_viewAllBooks"
+            android:layout_width="128dp"
+            android:layout_height="164dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:contentDescription="@string/todo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView8"
+            app:srcCompat="@drawable/book_list1" />
+
+        <ImageView
+            android:id="@+id/button_currentlyReadBooks"
+            android:layout_width="115dp"
+            android:layout_height="163dp"
+            android:layout_marginStart="4dp"
+            android:contentDescription="TODO"
+            app:layout_constraintBottom_toBottomOf="@+id/button_viewAllBooks"
+            app:layout_constraintStart_toEndOf="@+id/button_viewAllBooks"
+            app:layout_constraintTop_toTopOf="@+id/button_viewAllBooks"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/book_list31" />
+
+        <ImageView
+            android:id="@+id/button_alreadyReadBooks"
+            android:layout_width="115dp"
+            android:layout_height="159dp"
+            android:layout_marginStart="16dp"
+            android:contentDescription="TODO"
+            app:layout_constraintBottom_toBottomOf="@+id/button_currentlyReadBooks"
+            app:layout_constraintStart_toEndOf="@+id/button_currentlyReadBooks"
+            app:layout_constraintTop_toTopOf="@+id/button_currentlyReadBooks"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/book_list19" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

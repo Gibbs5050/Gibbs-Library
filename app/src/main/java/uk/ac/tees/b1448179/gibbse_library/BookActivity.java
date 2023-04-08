@@ -3,6 +3,8 @@ package uk.ac.tees.b1448179.gibbse_library;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+//import android.text.method.ScrollingMovementMethod;
+import android.text.method.ScrollingMovementMethod;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -11,7 +13,7 @@ import com.bumptech.glide.Glide;
 
 public class BookActivity extends AppCompatActivity {
 
-    private TextView txtBookName, txtAuthor, txtPages, txtDescription;
+    private TextView txtBookName, txtAuthor, txtPages, txtDescription, longDescTextView;
     private Button btnContinueReading, btnAddToFavorites, btnAddToAlreadyRead, btnBuyBook;
     private ImageView bookImage;
 
@@ -23,21 +25,13 @@ public class BookActivity extends AppCompatActivity {
         //run mtd init views
         initViews();
 
-        String longDescription = " The three firm friends, Harry, Ron and Hermione, are soon immersed in the daily round of Potions, \" +\n" +
-                "                \"Herbology, Charms, Defence Against the Dark Arts, and Quidditch. But then horrible and mysterious things begin to happen. \" +\n" +
-                "                \"Harry keeps hearing strange voices, sinister and dark messages appear on the wall, \" +\n" +
-                "                \"and then Ron's sister Ginny disappears... The three firm friends, Harry, Ron and Hermione, are soon immersed in the daily round of Potions, \\\" +\\n\" +\n" +
-                "                \"                \\\"Herbology, Charms, Defence Against the Dark Arts, and Quidditch. But then horrible and mysterious things begin to happen. \\\" +\\n\" +\n" +
-                "                \"                \\\"Harry keeps hearing strange voices, sinister and dark messages appear on the wall, \\\" +\\n\" +\n" +
-                "                \"                \\\"and then Ron's sister Ginny disappears...\" +\n" +
-                "                \"The three firm friends, Harry, Ron and Hermione, are soon immersed in the daily round of Potions, \\\" +\\n\" +\n" +
-                "                \"                \\\"Herbology, Charms, Defence Against the Dark Arts, and Quidditch. But then horrible and mysterious things begin to happen. \\\" +\\n\" +\n" +
-                "                \"                \\\"Harry keeps hearing strange voices, sinister and dark messages appear on the wall, \\\" +\\n\" +\n" +
-                "                \"                \\\"and then Ron's sister Ginny disappears...\" +\n" +
-                "                \"The three firm friends, Harry, Ron and Hermione, are soon immersed in the daily round of Potions, \\\" +\\n\" +\n" +
-                "                \"                \\\"Herbology, Charms, Defence Against the Dark Arts, and Quidditch. But then horrible and mysterious things begin to happen. \\\" +\\n\" +\n" +
-                "                \"                \\\"Harry keeps hearing strange voices, sinister and dark messages appear on the wall, \\\" +\\n\" +\n" +
-                "                \"                \\\"and then Ron's sister Ginny disappears...";
+
+
+        String longDescription = "Harry Potter and the Chamber, Harry Potter and the Chamber , Harry Potter and the Chamber, Harry Potter and the Chamber, Harry Potter and the Chamber, Harry Potter and the Chamber, Harry Potter and the Chamber, Harry Potter and the Chamber, Harry Potter and the Chamber" +
+                ", Harry Potter and the Chamber, Harry Potter and the Chamber, Harry Potter and the Chamber, Harry Potter and the Chamber, Harry Potter and the Chamber";
+
+        //longDescTextView.setMovementMethod(new ScrollingMovementMethod());
+
         //TODO: Get the data from recycler view in here
         Books book = new Books(1,"Harry Potter and the Chamber\n of Secrets", "J. K. Rowling",2500,"https://m.media-amazon.com/images/I/51Q9uPHKhAL._SX324_BO1,204,203,200_.jpg",
                 "Description - An ancient prophecy seems to be coming true when a mysterious presence begins stalking the corridors of a school of magic and leaving its victims paralyzed.",longDescription);

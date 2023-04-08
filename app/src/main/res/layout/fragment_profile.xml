@@ -4,16 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#EAE3FD"
+    android:background="#58AAC6"
     tools:context=".ProfileActivity">
 
     <TextView
         android:id="@+id/genderView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
         android:layout_marginTop="32dp"
-        android:text="gender view"
+        android:text="Loading Gender..."
         android:textColor="#050505"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="@+id/age"
         app:layout_constraintTop_toBottomOf="@+id/age" />
 
@@ -22,8 +24,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Gender:"
+        android:text="Gender              :"
         android:textColor="#050505"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/textView14"
         app:layout_constraintHorizontal_bias="0.714"
         app:layout_constraintStart_toStartOf="@+id/textView14"
@@ -33,9 +37,11 @@
         android:id="@+id/emailAddress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
         android:layout_marginTop="40dp"
-        android:text="Email address view"
+        android:text="Loading Email address..."
         android:textColor="#050505"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="@+id/guideline4"
         app:layout_constraintTop_toBottomOf="@+id/fullName" />
 
@@ -46,8 +52,9 @@
         android:layout_marginEnd="156dp"
         android:text="@string/user_full_name"
         android:textColor="#050505"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.105"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline4"
         app:layout_constraintTop_toTopOf="@+id/guideline5" />
 
@@ -55,9 +62,11 @@
         android:id="@+id/age"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:text="Age view"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:text="Loading Age..."
         android:textColor="#050505"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="@+id/guideline4"
         app:layout_constraintTop_toBottomOf="@+id/emailAddress" />
 
@@ -66,38 +75,40 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="144dp"
-        android:backgroundTint="#D279EC"
+        android:backgroundTint="#181F37"
         android:text="@string/user_log_out"
-        android:textColor="#1E1D1D"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.437"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/genderView"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.989" />
 
     <TextView
         android:id="@+id/greeting"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:text="@string/user_welcome"
+        android:layout_marginTop="16dp"
 
+        android:text="@string/user_welcome"
         android:textColor="#100F0F"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline4"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView19" />
 
     <TextView
         android:id="@+id/user_return_home"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="48dp"
         android:text="@string/user_return_to_home_page"
-        android:textColor="#050505"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/signOut"
+        app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintStart_toStartOf="@+id/signOut"
         app:layout_constraintTop_toBottomOf="@+id/signOut" />
 
@@ -105,9 +116,9 @@
         android:id="@+id/imageView2"
         android:layout_width="117dp"
         android:layout_height="99dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="36dp"
         android:contentDescription="@string/user_profile_picture"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/book_shelf"
@@ -117,8 +128,10 @@
         android:id="@+id/textView12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/user_full_name"
+        android:text="Full Name       :"
         android:textColor="#050505"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/fullName"
         app:layout_constraintHorizontal_bias="0.467"
         app:layout_constraintStart_toStartOf="parent"
@@ -128,10 +141,12 @@
         android:id="@+id/textView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="40dp"
-        android:text="@string/user_email_address"
+        android:text="Email Address :"
         android:textColor="#050505"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
@@ -140,10 +155,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="88dp"
-        android:layout_marginTop="36dp"
-        android:text="@string/user_age"
+        android:layout_marginTop="32dp"
+        android:text="Age                    :"
         android:textColor="#050505"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/textView13"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
@@ -159,7 +177,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="229dp" />
+        app:layout_constraintGuide_begin="247dp" />
 
     <TextView
         android:id="@+id/textView19"
@@ -168,9 +186,10 @@
         android:layout_marginTop="8dp"
         android:text="Reader's Profile"
         android:textColor="#0E0D0D"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/imageView2"
-        app:layout_constraintHorizontal_bias="0.789"
+        app:layout_constraintHorizontal_bias="0.52"
         app:layout_constraintStart_toStartOf="@+id/imageView2"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
