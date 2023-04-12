@@ -1,7 +1,9 @@
 package uk.ac.tees.b1448179.gibbse_library;
 
+import android.animation.ObjectAnimator;
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -9,13 +11,19 @@ import androidx.annotation.Nullable;
 //import androidx.core.view.GravityCompat;
 //import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
+import androidx.vectordrawable.graphics.drawable.ArgbEvaluator;
 //import androidx.navigation.fragment.NavHostFragment;
 
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
 //import android.widget.EditText;
 
 
@@ -26,29 +34,11 @@ import android.widget.ImageView;
  */
 public class DashboardFragment extends Fragment {
 
-    // private EditText editText;
-
-    //create interface to communicate with activity
-//
-//    public interface DashboardFragmentListener {
-//        void onInputASent (CharSequence input);
-//    }
-//    //implement the layout
-
     @SuppressLint("MissingInflatedId")
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-      View v = inflater.inflate(R.layout.fragment_dashboard, container,false);
-
-     /* editText = v.findViewById(R.id.editText);
-      editText.setOnClickListener(new View.OnClickListener() {
-          @Override
-          public void onClick(View v) {
-              CharSequence input = editText.getText(); //get input
-              listener.onInputASent(input);
-          }
-      });*/
+        View v = inflater.inflate(R.layout.fragment_dashboard, container,false);
 
 
         //private DashboardFragmentListener listener;
@@ -61,180 +51,91 @@ public class DashboardFragment extends Fragment {
                 DashboardFragment.this.startActivity(myIntent);
             }
         });
+
+
+        Button signOut = v.findViewById(R.id.signOut);
+
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+
+        signOut.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("RestrictedApi")
+            @Override
+            public void onClick(View v) {
+
+                auth.signOut();
+                startActivity(new Intent(getContext(),MainActivity.class));
+                Toast.makeText(getContext(), "Logged out successfully!!", Toast.LENGTH_LONG).show();
+
+                // Define the animation
+                ObjectAnimator anim = ObjectAnimator.ofInt(signOut, "backgroundColor", Color.BLUE, Color.RED);
+                anim.setDuration(1000); // Duration in milliseconds
+                anim.setEvaluator(new ArgbEvaluator());
+
+                // Start the animation
+                anim.start();
+
+            }
+        });
+
+
+        ImageView drawer_shelve = v.findViewById(R.id.drawer_shelve);
+        drawer_shelve.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(DashboardFragment.this.getActivity(), LibraryCatalogue.class);
+                DashboardFragment.this.startActivity(myIntent); //implement the intent ie switch to the fragment required
+            }
+        });
+
         ImageView button_viewAllBooks = v.findViewById(R.id.button_viewAllBooks);
         button_viewAllBooks.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent myIntent = new Intent(DashboardFragment.this.getActivity(), AllBooksActivity.class);
                 DashboardFragment.this.startActivity(myIntent); //implement the intent ie switch to the fragment required
+
+
             }
         });
-        ImageView button_alreadyReadBooks = v.findViewById(R.id.button_alreadyReadBooks);
-        Button myDictionary = v.findViewById(R.id.myDictionary);
-        Button myFavorite = v.findViewById(R.id.myFavorite);
-        Button aboutApp = v.findViewById(R.id.aboutApp);
-        ImageView button_currentlyReadBooks = v.findViewById(R.id.button_currentlyReadBooks);
-      button_currentlyReadBooks.setOnClickListener(new View.OnClickListener() {
-          @Override
-          public void onClick(View v) {
-              Intent myIntent = new Intent(DashboardFragment.this.getActivity(), ProfileActivity.class);
-              DashboardFragment.this.startActivity(myIntent); //implement the intent ie switch to the fragment required
-          }
-      });
-
-      return v;
 
 
-       // return super.onCreateView(inflater, container, savedInstanceState);
-    }
+        //make text blink
+        TextView textView9 = v.findViewById(R.id.textView9); // replace with your text view ID
+        Handler handler = new Handler();
 
-  /*  public void updateEditText(CharSequence newText){
-        editText.setText(newText);
-    }
-    //check if activity implements the interface
-*/
+        Runnable runnable = new Runnable() {
+            boolean visible = true;
 
-    /*
-    @Override
-    public void onAttach(@NonNull Context context) {
-        super.onAttach(context);
-        if (context instanceof DashboardFragmentListener){
-            listener = (DashboardFragmentListener) context;
-        }
-        else {
-            throw new RuntimeException(context.toString()
-            + "must implement DashboardFragment listener"
-            );
-        }
-    }
-    */
-/*
-@Override
-public void onDetach() {
-    super.onDetach();
-    listener = null;
-} */
-    /*private FragmentFirstBinding binding;
-private Button button_viewAllBooks
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    @Override
-    public View onCreateView(
-            LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState
-    ) {
-
-        binding = FragmentFirstBinding.inflate(inflater, container, false);
-        return binding.getRoot();
-
-    }
-
-    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
-        binding.button_currentlyReadBooks.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(FirstFragment.this)
-                        .navigate(R.id.action_FirstFragment_to_SecondFragment);
+            public void run() {
+                textView9.setVisibility(visible ? View.VISIBLE : View.INVISIBLE);
+                visible = !visible;
+                handler.postDelayed(this, 500); // change delay time (in milliseconds) as needed
             }
-        });
-    }
+        };
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        binding = null;
-    } */
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public DashboardFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment DashboardFragment.
-     */
-
-
-
-
-
-    //the big commenting
-    /*
-    // TODO: Rename and change types and number of parameters
-    public static DashboardFragment newInstance(String param1, String param2) {
-        DashboardFragment fragment = new DashboardFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-       /* setContentView(R.layout.fragment_dashboard)
-        final DrawerLayout drawerLayout = findViewById(R.id.drawerLayout);
-        findViewById(R.id.imageMenu).setOnClickListener(new View.OnClickListener() {
+        handler.post(runnable);
+        ImageView button_alreadyReadBooks = v.findViewById(R.id.button_alreadyReadBooks);
+        ImageView myDictionary = v.findViewById(R.id.myDictionary);
+        myDictionary.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                drawerLayout.openDrawer(GravityCompat.START);
+                Intent myIntent = new Intent(DashboardFragment.this.getActivity(),DictionaryActivity.class);
+                DashboardFragment.this.startActivity(myIntent);
+            }
+        });
+        ImageView myFavorite = v.findViewById(R.id.aboutApp);
+        ImageView aboutApp = v.findViewById(R.id.aboutApp);
+        ImageView button_currentlyReadBooks = v.findViewById(R.id.button_currentlyReadBooks);
+        button_currentlyReadBooks.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(DashboardFragment.this.getActivity(), MyLocalDatabase.class);
+                DashboardFragment.this.startActivity(myIntent); //implement the intent ie switch to the fragment required
             }
         });
 
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+        return v;
+
     }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_dashboard, container, false);
-    }
-
-
-    */
 }

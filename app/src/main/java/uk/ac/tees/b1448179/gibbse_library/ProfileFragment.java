@@ -12,6 +12,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -126,7 +128,8 @@ public class ProfileFragment extends Fragment {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-              //  Toast.makeText(ProfileFragment.this, "Oops! something wrong happened", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "Oops! something wrong happened", Toast.LENGTH_LONG).show();
+              //Toast.makeText(ProfileFragment.this, "Oops! something wrong happened", Toast.LENGTH_SHORT).show();
             }
         });
 

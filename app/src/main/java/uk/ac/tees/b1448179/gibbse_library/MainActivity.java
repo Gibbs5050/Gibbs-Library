@@ -54,17 +54,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()) {
             case R.id.RegisterLoginID:
                 startActivity(new Intent(this,RegisterUser.class)); //redirect to register layout
+                register.setTextColor(getResources().getColor(R.color.amber)); //change colour on click
                 break;
             case R.id.buttonLogin:
                 userLogin();     //login user
+                buttonLogin.setTextColor(getResources().getColor(R.color.amber)); //change colour on click
                 break;
             case R.id.forgotPassword:
                 startActivity(new Intent(this,IForgotPassword.class)); //redirect to forgot password layout
+                forgotPassword.setTextColor(getResources().getColor(R.color.amber)); //change colour on click
                 break;
             case R.id.loginHomePage:
                 startActivity(new Intent(this,MainActivity2.class)); //redirect to homepage layout
+                loginHomePage.setTextColor(getResources().getColor(R.color.amber)); //change colour on click
                 break;
 
+            default:
+                throw new IllegalStateException("Unexpected value: " + v.getId());
         }
     }
 

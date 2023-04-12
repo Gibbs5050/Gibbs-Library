@@ -40,7 +40,7 @@ private Button logout,user_profile;
         switch (v.getId()) {
 
             case R.id.user_profile:
-                startActivity(new Intent(this, ProfileActivity.class));
+                startActivity(new Intent(this, MyLocalDatabase.class));
 
         }
     }

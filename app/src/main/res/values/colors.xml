@@ -10,4 +10,5 @@
     <color name="colorPrimary">#673AB7</color>
     <color name="colorGreen">#32CD32</color>
     <color name="colorAccent">#FF5252</color>
+    <color name="amber">#E7E9B7</color>
 </resources>

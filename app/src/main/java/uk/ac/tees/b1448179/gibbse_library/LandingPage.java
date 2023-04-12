@@ -36,6 +36,9 @@ public class LandingPage extends AppCompatActivity implements View.OnClickListen
 
             case R.id.landingButtonGetStarted:
                startActivity(new Intent(this,MainActivity.class));
+               //create colour in colour.xml for on click colour change to show when clicked
+                landingButtonGetStarted.setTextColor(getResources().getColor(R.color.amber));
+
 
         }
     }
