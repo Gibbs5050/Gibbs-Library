@@ -5,7 +5,7 @@ import java.util.List;
 public class Definitions {
 
     //create variables to match dictionary API
-    String definition = ";";
+    String definition = "";
     String example = "";
     List<String> synonyms = null;
     List<String> antonyms = null;

@@ -41,7 +41,7 @@
                 android:text = "Word"
                 android:textColor = "@color/yellow"
                 android:padding="8dp"
-
+                android:textStyle="italic"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
             <androidx.recyclerview.widget.RecyclerView
@@ -53,7 +53,7 @@
                 android:text = "Meaning"
                 android:textColor = "@color/yellow"
                 android:padding="8dp"
-
+                android:textStyle="italic"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
             <androidx.recyclerview.widget.RecyclerView

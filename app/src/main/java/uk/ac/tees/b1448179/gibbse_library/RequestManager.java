@@ -28,6 +28,7 @@ public class RequestManager {
 
     //constructor for request manager
     public RequestManager(Context context) {
+
         this.context = context;
     }
 
@@ -42,6 +43,7 @@ public class RequestManager {
                 public void onResponse(Call<List<APIResponse>> call, Response<List<APIResponse>> response) {
                     if (!response.isSuccessful()){
                         Toast.makeText(context, "Error!!", Toast.LENGTH_SHORT).show();
+                        return;
                     }
                     listener.onFetchData(response.body().get(0), response.message());
                 }
