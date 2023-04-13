@@ -11,4 +11,6 @@
     <color name="colorGreen">#32CD32</color>
     <color name="colorAccent">#FF5252</color>
     <color name="amber">#E7E9B7</color>
+    <color name="yellow">#F7CD2E</color>
+    <color name="grey">#24282E</color>
 </resources>
