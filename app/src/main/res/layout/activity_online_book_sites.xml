@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#7EC9D3"
+    android:backgroundTint="#43C7D8"
+    tools:context=".OnlineBookSites">
+
+    <TextView
+        android:id="@+id/textViewOpenLibrary"
+        android:layout_width="221dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="20dp"
+        android:layout_weight="1"
+        android:background="@drawable/roundstyle"
+        android:backgroundTint="#BCE4F6"
+        android:text="Open Library"
+        android:textAlignment="center"
+        android:textColor="#0097A7"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/textViewIbiblo"
+        app:layout_constraintStart_toStartOf="@+id/textViewIbiblo"
+        app:layout_constraintTop_toBottomOf="@+id/textViewIbiblo" />
+
+    <TextView
+        android:id="@+id/textViewIbiblo"
+        android:layout_width="221dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="20dp"
+        android:layout_weight="1"
+        android:background="@drawable/roundstyle"
+        android:backgroundTint="#BCE4F6"
+        android:text="Ibiblo"
+        android:textAlignment="center"
+        android:textColor="#0097A7"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/textViewBookBoon"
+        app:layout_constraintStart_toStartOf="@+id/textViewBookBoon"
+        app:layout_constraintTop_toBottomOf="@+id/textViewBookBoon" />
+
+    <TextView
+        android:id="@+id/textViewInternetArchive"
+        android:layout_width="221dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="20dp"
+        android:layout_weight="1"
+        android:background="@drawable/roundstyle"
+        android:backgroundTint="#BCE4F6"
+        android:text="Internet Archive"
+        android:textAlignment="center"
+        android:textColor="#0097A7"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/textViewOpenLibrary"
+        app:layout_constraintStart_toStartOf="@+id/textViewOpenLibrary"
+        app:layout_constraintTop_toBottomOf="@+id/textViewOpenLibrary" />
+
+    <TextView
+        android:id="@+id/textViewBartleby"
+        android:layout_width="221dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="20dp"
+        android:layout_weight="1"
+        android:background="@drawable/roundstyle"
+        android:backgroundTint="#BCE4F6"
+        android:text="Bartleby"
+        android:textAlignment="center"
+        android:textColor="#0097A7"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/textViewInternetArchive"
+        app:layout_constraintStart_toStartOf="@+id/textViewInternetArchive"
+        app:layout_constraintTop_toBottomOf="@+id/textViewInternetArchive" />
+
+    <TextView
+        android:id="@+id/textViewBookBoon"
+        android:layout_width="221dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="20dp"
+        android:layout_weight="1"
+        android:background="@drawable/roundstyle"
+        android:backgroundTint="#BCE4F6"
+        android:text="book Boon"
+        android:textAlignment="center"
+        android:textColor="#0097A7"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/textViewGoogleBooks"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textViewGoogleBooks"
+        app:layout_constraintTop_toBottomOf="@+id/textViewGoogleBooks" />
+
+    <TextView
+        android:id="@+id/textViewGoogleBooks"
+        android:layout_width="221dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="24dp"
+        android:layout_weight="1"
+        android:background="@drawable/roundstyle"
+        android:backgroundTint="#BCE4F6"
+        android:text="Google Books"
+        android:textAlignment="center"
+        android:textColor="#0097A7"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/textViewTop"
+        app:layout_constraintStart_toStartOf="@+id/textViewTop"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTop" />
+
+    <TextView
+        android:id="@+id/textViewEbookCentral"
+        android:layout_width="221dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="20dp"
+        android:layout_weight="1"
+        android:background="@drawable/roundstyle"
+        android:backgroundTint="#BCE4F6"
+        android:text="Ebook Central"
+        android:textAlignment="center"
+        android:textColor="#0097A7"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/textViewBartleby"
+        app:layout_constraintStart_toStartOf="@+id/textViewBartleby"
+        app:layout_constraintTop_toBottomOf="@+id/textViewBartleby" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:text="@string/gibbs_library_textBanner"
+        android:textAlignment="center"
+        android:textColor="#0B0B0B"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/imageView9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView9" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="411dp"
+        android:layout_height="203dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/bookcase" />
+
+    <TextView
+        android:id="@+id/textViewTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Explore Top Ebook Libraries"
+        android:textColor="#DFD09E"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

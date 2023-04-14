@@ -24,14 +24,14 @@
             app:srcCompat="@drawable/book_adventure" />
 
         <ImageView
-            android:id="@+id/button_currentlyReadBooks"
+            android:id="@+id/button_my_favorites"
             android:layout_width="136dp"
             android:layout_height="match_parent"
             android:contentDescription="TODO"
             app:srcCompat="@drawable/book_horror" />
 
         <ImageView
-            android:id="@+id/button_alreadyReadBooks"
+            android:id="@+id/button_visit_external_bookstore"
             android:layout_width="133dp"
             android:layout_height="match_parent"
             android:contentDescription="TODO"

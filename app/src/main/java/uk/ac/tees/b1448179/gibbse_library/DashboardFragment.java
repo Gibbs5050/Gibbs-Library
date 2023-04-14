@@ -2,6 +2,8 @@ package uk.ac.tees.b1448179.gibbse_library;
 
 import android.animation.ObjectAnimator;
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -18,6 +20,8 @@ import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -51,6 +55,12 @@ public class DashboardFragment extends Fragment {
                 DashboardFragment.this.startActivity(myIntent);
             }
         });
+
+        TextView textView8 = v.findViewById(R.id.textView8);
+        //animation
+        Animation anim = AnimationUtils.loadAnimation(this.getActivity(), R.anim.landing_anim);
+        textView8.setAnimation(anim);
+
 
 
         Button signOut = v.findViewById(R.id.signOut);
@@ -115,7 +125,34 @@ public class DashboardFragment extends Fragment {
         };
 
         handler.post(runnable);
-        ImageView button_alreadyReadBooks = v.findViewById(R.id.button_alreadyReadBooks);
+        ImageView button_visit_external_bookstore = v.findViewById(R.id.button_visit_external_bookstore);
+        button_visit_external_bookstore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(DashboardFragment.this.getActivity(), OnlineBookSites.class);
+                DashboardFragment.this.startActivity(myIntent); //implement the intent ie switch to the fragment required
+
+                    }
+                });
+
+//                //what visit button does
+//                builder.setPositiveButton("Visit", new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialog, int which) {
+//                        //ToDo show website
+//                        Intent myIntent = new Intent(DashboardFragment.this.getActivity(), WebSwitchActivity.class);
+//                        myIntent.putExtra("url","https://google.com/");//show website
+//                        startActivity(myIntent);
+//
+//                    }
+//                });
+//                builder.create().show();
+
+
+
+//            }
+//        });
+
         ImageView myDictionary = v.findViewById(R.id.myDictionary);
         myDictionary.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -125,12 +162,47 @@ public class DashboardFragment extends Fragment {
             }
         });
         ImageView myFavorite = v.findViewById(R.id.aboutApp);
+
+        //set on click for about
         ImageView aboutApp = v.findViewById(R.id.aboutApp);
-        ImageView button_currentlyReadBooks = v.findViewById(R.id.button_currentlyReadBooks);
-        button_currentlyReadBooks.setOnClickListener(new View.OnClickListener() {
+        aboutApp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myIntent = new Intent(DashboardFragment.this.getActivity(), MyLocalDatabase.class);
+                //create alert dialog to select
+                AlertDialog.Builder builder = new AlertDialog.Builder(DashboardFragment.this.getActivity());
+                builder.setTitle(getString(R.string.app_name)); //makes title app name
+                builder.setMessage("Gibbs Library! is the best place to explore different online flexible learning platforms, " +
+                        "with so many amazing books and E-Learning features.\n" + "Visit Google.com and search for your favorite books in our library's web viewer:");
+                //what dialog exit button does
+                builder.setNegativeButton("Dismiss", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //close dialog
+                    }
+                });
+                //what visit button does
+                builder.setPositiveButton("Visit", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //ToDo show website
+                        Intent myIntent = new Intent(DashboardFragment.this.getActivity(), WebSwitchActivity.class);
+                        myIntent.putExtra("url","https://google.com/");//show website
+                        startActivity(myIntent);
+
+                    }
+                });
+                builder.create().show();
+
+
+
+            }
+        });
+
+        ImageView button_my_favorites = v.findViewById(R.id.button_my_favorites);
+        button_my_favorites.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(DashboardFragment.this.getActivity(), FavouriteBooks.class);
                 DashboardFragment.this.startActivity(myIntent); //implement the intent ie switch to the fragment required
             }
         });

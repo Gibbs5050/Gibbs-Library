@@ -30,7 +30,7 @@ public class MyLocalDatabase extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile);
+        setContentView(R.layout.activity_favourite_books);
         user_return_home = (TextView)findViewById(R.id.user_return_home);
         user_return_home.setOnClickListener(new View.OnClickListener() {
             @Override

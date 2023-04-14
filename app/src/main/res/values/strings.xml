@@ -45,6 +45,7 @@
     <string name="admin_mode_switch">Admin Mode</string>
     <string name="enter_email_address">Enter Email Address</string>
     <string name="todo">TODO</string>
+    <string name="universal_digital">Universal Digital</string>
 
     //for gender suggestions
     <string-array name="suggestions">

@@ -5,7 +5,7 @@
     android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/unnamed"
+    android:background="@drawable/background_zero"
     android:orientation="vertical"
     tools:context=".SplashActivity">
 
@@ -67,19 +67,31 @@
         android:id="@+id/textView3"
         android:layout_width="220dp"
         android:layout_height="49dp"
-        android:layout_marginTop="324dp"
+        android:layout_marginTop="4dp"
         android:background="#FFFFFF"
         android:backgroundTint="#FFFFFF"
-        android:text="@string/gibbs_library_textBanner"
+        android:text="Gibbs"
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textColor="#0097A7"
         android:textSize="35sp"
         android:textStyle="bold"
-        android:visibility="visible"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintHorizontal_bias="0.539"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="312dp"
+        android:layout_height="362dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.475"
+        app:srcCompat="@drawable/library_open" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

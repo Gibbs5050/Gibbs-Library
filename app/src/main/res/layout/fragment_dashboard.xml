@@ -118,8 +118,8 @@
 
                 <LinearLayout
                     android:id="@+id/linearLayout4"
-                    android:layout_width="422dp"
-                    android:layout_height="159dp"
+                    android:layout_width="426dp"
+                    android:layout_height="146dp"
                     android:layout_marginTop="32dp"
                     android:orientation="horizontal">
 
@@ -133,20 +133,20 @@
                         app:srcCompat="@drawable/book_list1" />
 
                     <ImageView
-                        android:id="@+id/button_currentlyReadBooks"
+                        android:id="@+id/button_my_favorites"
                         android:layout_width="115dp"
                         android:layout_height="match_parent"
                         android:layout_marginStart="12dp"
                         android:contentDescription="TODO"
-                        app:srcCompat="@drawable/book_list31" />
+                        app:srcCompat="@drawable/favorites_icon8" />
 
                     <ImageView
-                        android:id="@+id/button_alreadyReadBooks"
+                        android:id="@+id/button_visit_external_bookstore"
                         android:layout_width="115dp"
                         android:layout_height="match_parent"
                         android:layout_marginStart="16dp"
                         android:contentDescription="TODO"
-                        app:srcCompat="@drawable/book_list19" />
+                        app:srcCompat="@drawable/external_library1" />
 
                 </LinearLayout>
 
@@ -165,10 +165,10 @@
 
                     <ImageView
                         android:id="@+id/imageView8"
-                        android:layout_width="100dp"
+                        android:layout_width="101dp"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="30dp"
-                        android:src="@drawable/my_favourites1" />
+                        android:src="@drawable/find_me1" />
 
                     <ImageView
                         android:id="@+id/aboutApp"
