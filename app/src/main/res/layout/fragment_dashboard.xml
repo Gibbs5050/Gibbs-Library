@@ -14,7 +14,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#F0FDFF"
+        android:background="#EDF1F3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,12 +23,14 @@
         <LinearLayout
             android:id="@+id/layoutToolbar"
             android:layout_width="match_parent"
-            android:layout_height="?actionBarSize"
+            android:layout_height="56dp"
             android:background="#0E77A6"
             android:gravity="center_vertical"
             android:orientation="horizontal"
             android:paddingStart="15dp"
             android:paddingEnd="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
@@ -46,7 +48,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
-                android:text="@string/app_name"
+                android:text="My Library"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:textStyle="bold"
@@ -56,131 +58,528 @@
         </LinearLayout>
 
 
-        <ImageView
-            android:id="@+id/imageViewSelectBook"
-            android:layout_width="711dp"
-            android:layout_height="192dp"
-            android:layout_marginTop="0dp"
-            android:contentDescription="select book"
-            android:visibility="visible"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/layoutToolbar"
-            app:srcCompat="@drawable/istockphoto_pic1" />
-
-        <TextView
-            android:id="@+id/textView8"
-            android:layout_width="465dp"
-            android:layout_height="44dp"
-            android:layout_marginEnd="112dp"
-            android:background="@drawable/roundstyle"
-            android:backgroundTint="#1C7387"
-            android:text="MY LIBRARY"
-            android:textAlignment="center"
-            android:textColor="#FFFFFF"
-            android:textSize="34sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@+id/imageViewSelectBook"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageViewSelectBook" />
-
-        <TextView
-            android:id="@+id/textView9"
-            android:layout_width="75dp"
-            android:layout_height="82dp"
-            android:text="Click here to view Catalogue"
-            android:textAlignment="center"
-            android:textColor="#F3EBDE"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            android:visibility="visible"
-            app:layout_constraintBottom_toBottomOf="@+id/imageViewSelectBook"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/imageViewSelectBook"
-            app:layout_constraintVertical_bias="0.844" />
-
-
         <ScrollView
-            android:layout_width="410dp"
-            android:layout_height="439dp"
-            android:layout_marginEnd="1dp"
+            android:layout_width="match_parent"
+            android:layout_height="530dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView8">
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout6"
+            tools:context=".MyLocalDatabase">
 
-            <LinearLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <LinearLayout
+                    android:id="@+id/row1"
+                    android:layout_width="0dp"
+                    android:layout_height="175dp"
+                    android:orientation="horizontal"
+                    android:padding="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/trendingBooks"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/white"
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="20dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/textTrending"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/imageTrending"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="10dp"
+                                android:text="Trending Books"
+                                android:textColor="@color/grey"
+                                android:textSize="20sp" />
+
+                            <ImageView
+                                android:id="@+id/imageTrending"
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="15dp"
+                                android:src="@drawable/trend_books" />
+
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/myCatalogue"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/white"
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="20dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/textCatalogue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/imageCatalogue"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="10dp"
+                                android:text="My Catalogue"
+                                android:textColor="@color/grey"
+                                android:textSize="20sp" />
+
+                            <ImageView
+                                android:id="@+id/imageCatalogue"
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="15dp"
+                                android:src="@drawable/cat_shelve6" />
+
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/row2"
+                    android:layout_width="0dp"
+                    android:layout_height="175dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:padding="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/row1">
+
+                    <androidx.cardview.widget.CardView
+
+                        android:id="@+id/myDictionary"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/white"
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="20dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/textDictionary"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/imageDictionary"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="10dp"
+                                android:text="My Dictonary"
+                                android:textColor="@color/grey"
+                                android:textSize="20sp" />
+
+                            <ImageView
+                                android:id="@+id/imageDictionary"
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="15dp"
+                                android:src="@drawable/dictionary_icon3" />
+
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/topBookStores"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/white"
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="20dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/textStores"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/imageStores"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="10dp"
+                                android:text="Top Book Stores"
+                                android:textColor="@color/grey"
+                                android:textSize="20sp" />
+
+                            <ImageView
+                                android:id="@+id/imageStores"
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="15dp"
+                                android:src="@drawable/laptop" />
+
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/row3"
+                    android:layout_width="0dp"
+                    android:layout_height="175dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:padding="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/row2">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/myFavorite"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/white"
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="20dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/textFavorite"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/imageFavorite"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="10dp"
+                                android:text="My Favorite"
+                                android:textColor="@color/grey"
+                                android:textSize="20sp" />
+
+                            <ImageView
+                                android:id="@+id/imageFavorite"
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="15dp"
+                                android:src="@drawable/reading_icon8" />
+
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/myBrowser"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/white"
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="20dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/textBrowser"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/imageBrowser"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="10dp"
+                                android:text="Gibbs Browser"
+                                android:textColor="@color/grey"
+                                android:textSize="20sp" />
+
+                            <ImageView
+                                android:id="@+id/imageBrowser"
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="15dp"
+                                android:src="@drawable/brower_icon" />
+
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/row4"
+                    android:layout_width="0dp"
+                    android:layout_height="175dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:padding="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/row3">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/findMe"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/white"
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="20dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/textSpotMe"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/imageFindMe"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="10dp"
+                                android:text="Current Location"
+                                android:textColor="@color/grey"
+                                android:textSize="20sp" />
+
+                            <ImageView
+                                android:id="@+id/imageFindMe"
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="15dp"
+                                android:src="@drawable/find_me" />
+
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/myAbout"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/white"
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="20dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/textAbout"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/imageAbout"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="10dp"
+                                android:text="About App"
+                                android:textColor="@color/grey"
+                                android:textSize="20sp" />
+
+                            <ImageView
+                                android:id="@+id/imageAbout"
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="15dp"
+                                android:src="@drawable/about_icon4" />
+
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/linearLayout4"
+            android:layout_width="412dp"
+            android:layout_height="100dp"
+            android:background="#FFFFFF"
+            android:backgroundTint="#AEE6ED"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layoutToolbar">
+
+            <LinearLayout
+                android:layout_width="300dp"
+                android:layout_height="85dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
                 android:orientation="vertical">
 
-                <LinearLayout
-                    android:id="@+id/linearLayout4"
-                    android:layout_width="426dp"
-                    android:layout_height="146dp"
-                    android:layout_marginTop="32dp"
-                    android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/appName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/gibbs_library_textBanner"
+                    android:textAlignment="center"
+                    android:textColor="#2DAEBF"
+                    android:textSize="40sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@+id/imageViewSelectBook2"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/layoutToolbar" />
 
-                    <ImageView
-                        android:id="@+id/button_viewAllBooks"
-                        android:layout_width="115dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="0dp"
-                        android:contentDescription="@string/todo"
-                        app:srcCompat="@drawable/book_list1" />
-
-                    <ImageView
-                        android:id="@+id/button_my_favorites"
-                        android:layout_width="115dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginStart="12dp"
-                        android:contentDescription="TODO"
-                        app:srcCompat="@drawable/favorites_icon8" />
-
-                    <ImageView
-                        android:id="@+id/button_visit_external_bookstore"
-                        android:layout_width="115dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginStart="16dp"
-                        android:contentDescription="TODO"
-                        app:srcCompat="@drawable/external_library1" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="422dp"
-                    android:layout_height="159dp"
-                    android:layout_marginTop="20dp"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:id="@+id/myDictionary"
-                        android:layout_width="100dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="23dp"
-                        android:src="@drawable/dictionary_icon3" />
-
-                    <ImageView
-                        android:id="@+id/imageView8"
-                        android:layout_width="101dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="30dp"
-                        android:src="@drawable/find_me1" />
-
-                    <ImageView
-                        android:id="@+id/aboutApp"
-                        android:layout_width="100dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="30dp"
-                        android:src="@drawable/about_us_icon_3" />
-
-                </LinearLayout>
-
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:text="@string/textTwo"
+                    android:textAlignment="center"
+                    android:textColor="#272727"
+                    android:textSize="17sp"
+                    app:layout_constraintEnd_toEndOf="@+id/appName"
+                    app:layout_constraintHorizontal_bias="0.264"
+                    app:layout_constraintStart_toStartOf="@+id/appName"
+                    app:layout_constraintTop_toBottomOf="@+id/appName" />
             </LinearLayout>
-        </ScrollView>
+
+            <ImageView
+                android:id="@+id/imageViewSelectBook2"
+                android:layout_width="91dp"
+                android:layout_height="74dp"
+                android:layout_marginTop="11dp"
+                android:src="@drawable/bookaholic_user_smile"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layoutToolbar"
+                app:srcCompat="@drawable/bookaholic_user_smile" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:backgroundTint="#E5F1F3"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
+
+            <SearchView
+                android:id="@+id/search_view"
+                android:layout_width="324dp"
+                android:layout_height="38dp"
+                android:queryHint="Library Search Engine"
+                android:queryBackground="@color/black"
+                android:searchHintIcon="@color/grey"
+                android:layout_marginLeft="50dp"
+                android:visibility="visible" />
+        </LinearLayout>
+
+        <!--        <ScrollView-->
+        <!--            -->
+        <!--            -->
+        <!--            android:layout_width="410dp"-->
+        <!--            android:layout_height="439dp"-->
+        <!--            android:layout_marginEnd="1dp"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintTop_toBottomOf="@+id/textView8">-->
+
+        <!--            <LinearLayout-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:orientation="vertical">-->
+
+        <!--                <LinearLayout-->
+        <!--                    android:id="@+id/linearLayout4"-->
+        <!--                    android:layout_width="426dp"-->
+        <!--                    android:layout_height="146dp"-->
+        <!--                    android:layout_marginTop="32dp"-->
+        <!--                    android:orientation="horizontal">-->
+
+        <!--                    <ImageView-->
+        <!--                        android:id="@+id/button_viewAllBooks"-->
+        <!--                        android:layout_width="115dp"-->
+        <!--                        android:layout_height="match_parent"-->
+        <!--                        android:layout_marginStart="16dp"-->
+        <!--                        android:layout_marginTop="0dp"-->
+        <!--                        android:contentDescription="@string/todo"-->
+        <!--                        app:srcCompat="@drawable/book_list1" />-->
+
+        <!--                    <ImageView-->
+        <!--                        android:id="@+id/button_my_favorites"-->
+        <!--                        android:layout_width="115dp"-->
+        <!--                        android:layout_height="match_parent"-->
+        <!--                        android:layout_marginStart="12dp"-->
+        <!--                        android:contentDescription="TODO"-->
+        <!--                        app:srcCompat="@drawable/favorites_icon8" />-->
+
+        <!--                    <ImageView-->
+        <!--                        android:id="@+id/button_visit_external_bookstore"-->
+        <!--                        android:layout_width="115dp"-->
+        <!--                        android:layout_height="match_parent"-->
+        <!--                        android:layout_marginStart="16dp"-->
+        <!--                        android:contentDescription="TODO"-->
+        <!--                        app:srcCompat="@drawable/external_library1" />-->
+
+        <!--                </LinearLayout>-->
+
+        <!--                <LinearLayout-->
+        <!--                    android:layout_width="422dp"-->
+        <!--                    android:layout_height="159dp"-->
+        <!--                    android:layout_marginTop="20dp"-->
+        <!--                    android:orientation="horizontal">-->
+
+        <!--                    <ImageView-->
+        <!--                        android:id="@+id/myDictionary"-->
+        <!--                        android:layout_width="100dp"-->
+        <!--                        android:layout_height="match_parent"-->
+        <!--                        android:layout_marginLeft="23dp"-->
+        <!--                        android:src="@drawable/dictionary_icon3" />-->
+
+        <!--                    <ImageView-->
+        <!--                        android:id="@+id/imageView8"-->
+        <!--                        android:layout_width="101dp"-->
+        <!--                        android:layout_height="match_parent"-->
+        <!--                        android:layout_marginLeft="30dp"-->
+        <!--                        android:src="@drawable/find_me1" />-->
+
+        <!--                    <ImageView-->
+        <!--                        android:id="@+id/aboutApp"-->
+        <!--                        android:layout_width="100dp"-->
+        <!--                        android:layout_height="match_parent"-->
+        <!--                        android:layout_marginLeft="30dp"-->
+        <!--                        android:src="@drawable/about_us_icon_3" />-->
+
+        <!--                </LinearLayout>-->
+
+        <!--            </LinearLayout>-->
+        <!--        </ScrollView>-->
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

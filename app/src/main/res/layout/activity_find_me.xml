@@ -2,38 +2,23 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/frameLayout3"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#77D1E8"
-    tools:context=".SettingsFragment">
+    android:background="@drawable/find_me1"
+    tools:context=".FindMe">
 
-    <!-- TODO: Update blank fragment layout -->
-
-    <Button
-        android:id="@+id/signOut2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
-        android:backgroundTint="#D5D6D6"
-        android:text="@string/user_log_out"
-        android:textColor="#000000"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout5" />
 
     <LinearLayout
         android:id="@+id/linearLayout5"
-        android:layout_width="411dp"
-        android:layout_height="wrap_content"
+        android:layout_width="401dp"
+        android:layout_height="578dp"
         android:layout_marginStart="2dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="28dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.375"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView10">
+        app:layout_constraintTop_toBottomOf="@+id/search_view">
 
         <TextView
             android:id="@+id/textViewLocation"
@@ -54,7 +39,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="80dp"
             android:text="Lattitude"
             android:textColor="@color/black"
             android:textSize="20sp"
@@ -119,48 +104,14 @@
             android:textColor="#000000" />
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="76dp"
-
-        android:text="@string/user_settings_textview"
-        android:textColor="#171616"
-        android:textSize="30sp"
-        android:textStyle="bold"
+    <SearchView
+        android:id="@+id/search_view"
+        android:layout_width="324dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="56dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.456"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <Switch
-        android:id="@+id/nightModeSwitch"
-        android:layout_width="157dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="16dp"
-        android:checked="false"
-        android:minHeight="48dp"
-        android:padding="16dp"
-        android:text="Night mode"
-        android:textColor="#0C0C0C"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.705"
-        app:layout_constraintStart_toEndOf="@+id/textView10"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
-    <ToggleButton
-        android:id="@+id/day_night_toggle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:text="Night Mode"
-        android:textOff="Day Mode"
-        android:textOn="Night Mode"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout5" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

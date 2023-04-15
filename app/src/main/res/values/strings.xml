@@ -6,6 +6,8 @@
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">Sign in or register</string>
     <string name="action_sign_in_short">Sign in</string>
+    <string name="aboutAppText">This Web based Library is the best place to explore different flexible learning platforms,\n " +
+    "And with the help of so many amazing books and E-Learning features. This Library creates a safe space where you can learn and grow in any field you are currently in</string>
     <string name="welcome">"Welcome !"</string>
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>

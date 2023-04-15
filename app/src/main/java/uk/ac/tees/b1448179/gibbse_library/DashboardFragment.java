@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 //import androidx.core.view.GravityCompat;
 //import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.vectordrawable.graphics.drawable.ArgbEvaluator;
 //import androidx.navigation.fragment.NavHostFragment;
@@ -47,8 +48,8 @@ public class DashboardFragment extends Fragment {
 
         //private DashboardFragmentListener listener;
         //declaration and initialization
-        ImageView imageViewSelectBook = v.findViewById(R.id.imageViewSelectBook);
-        imageViewSelectBook.setOnClickListener(new View.OnClickListener() {
+        CardView myCatalogue = v.findViewById(R.id.myCatalogue);
+        myCatalogue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent myIntent = new Intent(DashboardFragment.this.getActivity(),LibraryCatalogue.class);
@@ -56,17 +57,25 @@ public class DashboardFragment extends Fragment {
             }
         });
 
-        TextView textView8 = v.findViewById(R.id.textView8);
+        CardView findMe = v.findViewById(R.id.findMe);
+        findMe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(DashboardFragment.this.getActivity(),FindMe.class);
+                DashboardFragment.this.startActivity(myIntent);
+            }
+        });
+
+        //declare and initialize object
+        ImageView imageViewSelectBook2 = v.findViewById(R.id.imageViewSelectBook2);
         //animation
         Animation anim = AnimationUtils.loadAnimation(this.getActivity(), R.anim.landing_anim);
-        textView8.setAnimation(anim);
+        imageViewSelectBook2.setAnimation(anim);
 
 
-
+        //set Up drawer buttons
         Button signOut = v.findViewById(R.id.signOut);
-
         FirebaseAuth auth = FirebaseAuth.getInstance();
-
         signOut.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("RestrictedApi")
             @Override
@@ -80,14 +89,13 @@ public class DashboardFragment extends Fragment {
                 ObjectAnimator anim = ObjectAnimator.ofInt(signOut, "backgroundColor", Color.BLUE, Color.RED);
                 anim.setDuration(1000); // Duration in milliseconds
                 anim.setEvaluator(new ArgbEvaluator());
-
                 // Start the animation
                 anim.start();
-
             }
         });
 
 
+        //set up drawer link to catalog
         ImageView drawer_shelve = v.findViewById(R.id.drawer_shelve);
         drawer_shelve.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,36 +105,37 @@ public class DashboardFragment extends Fragment {
             }
         });
 
-        ImageView button_viewAllBooks = v.findViewById(R.id.button_viewAllBooks);
-        button_viewAllBooks.setOnClickListener(new View.OnClickListener() {
+        //set up trending books find
+        CardView trendingBooks = v.findViewById(R.id.trendingBooks);
+        trendingBooks.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent myIntent = new Intent(DashboardFragment.this.getActivity(), AllBooksActivity.class);
                 DashboardFragment.this.startActivity(myIntent); //implement the intent ie switch to the fragment required
-
-
             }
         });
 
 
         //make text blink
-        TextView textView9 = v.findViewById(R.id.textView9); // replace with your text view ID
+        TextView textView8 = v.findViewById(R.id.textView8);
         Handler handler = new Handler();
-
         Runnable runnable = new Runnable() {
             boolean visible = true;
 
             @Override
             public void run() {
-                textView9.setVisibility(visible ? View.VISIBLE : View.INVISIBLE);
+                textView8.setVisibility(visible ? View.VISIBLE : View.INVISIBLE);
                 visible = !visible;
-                handler.postDelayed(this, 500); // change delay time (in milliseconds) as needed
+                handler.postDelayed(this, 500); // changes delay time (in milliseconds) as needed
             }
         };
-
-        handler.post(runnable);
-        ImageView button_visit_external_bookstore = v.findViewById(R.id.button_visit_external_bookstore);
-        button_visit_external_bookstore.setOnClickListener(new View.OnClickListener() {
+        handler.post(runnable); //executes blink
+//
+//
+//
+        //top books store set up
+        CardView topBookStores = v.findViewById(R.id.topBookStores);
+        topBookStores.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent myIntent = new Intent(DashboardFragment.this.getActivity(), OnlineBookSites.class);
@@ -135,6 +144,8 @@ public class DashboardFragment extends Fragment {
                     }
                 });
 
+
+//
 //                //what visit button does
 //                builder.setPositiveButton("Visit", new DialogInterface.OnClickListener() {
 //                    @Override
@@ -147,13 +158,17 @@ public class DashboardFragment extends Fragment {
 //                    }
 //                });
 //                builder.create().show();
-
-
-
+//
+//
+//
 //            }
 //        });
 
-        ImageView myDictionary = v.findViewById(R.id.myDictionary);
+
+
+
+        //set up my dictionary click
+        CardView myDictionary = v.findViewById(R.id.myDictionary);
         myDictionary.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -161,27 +176,50 @@ public class DashboardFragment extends Fragment {
                 DashboardFragment.this.startActivity(myIntent);
             }
         });
-        ImageView myFavorite = v.findViewById(R.id.aboutApp);
 
-        //set on click for about
-        ImageView aboutApp = v.findViewById(R.id.aboutApp);
-        aboutApp.setOnClickListener(new View.OnClickListener() {
+        //create text for about app
+        String aboutAppText = "This is a web based Library and the best place to explore different flexible learning platforms.\n " +
+                "With the help of so many amazing books and E-Learning features, Gibbs Library creates a safe and less noisy space where you can learn and develop skills in any field. \n \n" +
+                "We have done our research, Now Let's learn together!";
+
+        //set up my about click listener
+        CardView myAbout = v.findViewById(R.id.myAbout);
+        myAbout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //create alert dialog to select
                 AlertDialog.Builder builder = new AlertDialog.Builder(DashboardFragment.this.getActivity());
                 builder.setTitle(getString(R.string.app_name)); //makes title app name
-                builder.setMessage("Gibbs Library! is the best place to explore different online flexible learning platforms, " +
-                        "with so many amazing books and E-Learning features.\n" + "Visit Google.com and search for your favorite books in our library's web viewer:");
+                builder.setMessage(aboutAppText);
                 //what dialog exit button does
-                builder.setNegativeButton("Dismiss", new DialogInterface.OnClickListener() {
+                builder.setNegativeButton("Close", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //close dialog
+                    }
+                });
+                builder.create().show();
+            }
+        });
+
+        //set up my browser click listener
+        CardView myBrowser = v.findViewById(R.id.myBrowser);
+        myBrowser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //create alert dialog to select
+                AlertDialog.Builder builder = new AlertDialog.Builder(DashboardFragment.this.getActivity());
+                builder.setTitle("Switching to Web View..."); //makes title app name
+                builder.setMessage("Do you want to continue to Web search view?");
+                //what dialog exit button does
+                builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         //close dialog
                     }
                 });
                 //what visit button does
-                builder.setPositiveButton("Visit", new DialogInterface.OnClickListener() {
+                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         //ToDo show website
@@ -192,14 +230,12 @@ public class DashboardFragment extends Fragment {
                     }
                 });
                 builder.create().show();
-
-
-
             }
         });
 
-        ImageView button_my_favorites = v.findViewById(R.id.button_my_favorites);
-        button_my_favorites.setOnClickListener(new View.OnClickListener() {
+        //set up my favourite card view
+        CardView myFavorite = v.findViewById(R.id.myFavorite);
+        myFavorite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent myIntent = new Intent(DashboardFragment.this.getActivity(), FavouriteBooks.class);

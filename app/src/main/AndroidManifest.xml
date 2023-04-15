@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+   xmlns:tools="http://schemas.android.com/tools"
+    package="uk.ac.tees.b1448179.gibbse_library">
+
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
 
     <application
         android:allowBackup="true"
@@ -65,7 +70,8 @@
         </activity>
         <activity
             android:name=".Books"
-            android:exported="false">
+            android:exported="false"
+            tools:ignore="Instantiatable">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -99,7 +105,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".HomePage"
+            android:name=".FindMe"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
