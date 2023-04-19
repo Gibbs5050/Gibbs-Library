@@ -3,6 +3,7 @@ package uk.ac.tees.b1448179.gibbse_library;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
@@ -21,21 +22,22 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     //declare variables
-    private TextView register,forgotPassword,loginHomePage;
+    private TextView register,forgotPassword,guestHomePage1;
     private EditText editLoginTextEmail, editLoginTextPassword;
     private Button buttonLogin;
-
+    private Button inputButton;
     private FirebaseAuth mAuth;
     private ProgressBar progressBar;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-     //initialise variables and set action listener
+
+        //initialise variables and set action listener
         register = (TextView) findViewById(R.id.RegisterLoginID);
         register.setOnClickListener(this);
-
         buttonLogin = (Button) findViewById(R.id.buttonLogin);
         buttonLogin.setOnClickListener(this);
         editLoginTextEmail = (EditText) findViewById(R.id.editLoginTextEmail);
@@ -44,9 +46,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mAuth = FirebaseAuth.getInstance();
         forgotPassword = (TextView) findViewById(R.id.forgotPassword);
         forgotPassword.setOnClickListener(this); //set on click listener
-        loginHomePage = (TextView) findViewById(R.id.loginHomePage);
-        loginHomePage.setOnClickListener(this);
+        guestHomePage1 = (TextView) findViewById(R.id.loginHomePage2);
+        guestHomePage1.setOnClickListener(this);
+
+//        inputButton = findViewById(R.id.loginHomePage);
+
+//        loginHomePage.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                // Show the input pop-up screen
+//                InputPopup inputPopup = new InputPopup();
+//                inputPopup.show(getSupportFragmentManager(), "input_popup");
+//            }
+//        });
+
+
+
+        //get the name to display
+//        String userInput = fullNameTextView.getText().toString();
+//        Toast.makeText(ProfileFragment.this.getActivity(), "Welcome to your profile " + userInput + "!", Toast.LENGTH_SHORT).show();
+
     }
+
 
     //create the method that implements view on click listener
     @Override
@@ -64,9 +85,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(new Intent(this,IForgotPassword.class)); //redirect to forgot password layout
                 forgotPassword.setTextColor(getResources().getColor(R.color.amber)); //change colour on click
                 break;
-            case R.id.loginHomePage:
+            case R.id.loginHomePage2:
                 startActivity(new Intent(this,MainActivity2.class)); //redirect to homepage layout
-                loginHomePage.setTextColor(getResources().getColor(R.color.amber)); //change colour on click
+                Toast.makeText(MainActivity.this, "Welcome to Gibbs Library!", Toast.LENGTH_SHORT).show();
+                guestHomePage1.setTextColor(getResources().getColor(R.color.amber)); //change colour on click
                 break;
 
             default:
@@ -108,6 +130,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     if (user.isEmailVerified()){
                         //redirect to user profile
                         startActivity(new Intent(MainActivity.this, MainActivity2.class));
+                        Toast.makeText(MainActivity.this, "Welcome to Gibbs Library! ", Toast.LENGTH_SHORT).show();
                     } else{
                         user.sendEmailVerification();
                         Toast.makeText(MainActivity.this, "Check your Email to verify account", Toast.LENGTH_LONG).show();

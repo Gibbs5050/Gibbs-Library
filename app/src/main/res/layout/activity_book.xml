@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/book"
+    android:background="@drawable/background_zero"
     tools:context=".BookActivity">
 
     <!--scroll view
@@ -53,9 +53,9 @@
 
     <ImageView
         android:id="@+id/imageViewBook"
-        android:layout_width="145dp"
-        android:layout_height="196dp"
-        android:layout_marginTop="36dp"
+        android:layout_width="126dp"
+        android:layout_height="159dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="28dp"
         android:contentDescription="Book photo display"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
@@ -63,56 +63,6 @@
         app:layout_constraintStart_toStartOf="@+id/guideline3"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/book_image_view" />
-
-    <Button
-        android:id="@+id/contRead"
-        android:layout_width="164dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="48dp"
-        android:backgroundTint="#181F37"
-        android:text="Continue Reading"
-        android:textColor="#FFFFFF"
-        android:textSize="10sp"
-        app:layout_constraintStart_toEndOf="@+id/imageViewBook"
-        app:layout_constraintTop_toTopOf="@+id/imageViewBook" />
-
-    <Button
-        android:id="@+id/buttonFavorites"
-        android:layout_width="164dp"
-        android:layout_height="48dp"
-        android:backgroundTint="#181F37"
-        android:text="Add to Favorites"
-        android:textColor="#FFFFFF"
-
-        android:textSize="10sp"
-        app:layout_constraintEnd_toEndOf="@+id/contRead"
-        app:layout_constraintStart_toStartOf="@+id/contRead"
-        app:layout_constraintTop_toBottomOf="@+id/contRead" />
-
-    <Button
-        android:id="@+id/buttonRead"
-        android:layout_width="164dp"
-        android:layout_height="48dp"
-        android:backgroundTint="#181F37"
-        android:text="Mark as Read"
-        android:textColor="#FFFFFF"
-        android:textSize="10sp"
-        app:layout_constraintEnd_toEndOf="@+id/buttonFavorites"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/buttonFavorites"
-        app:layout_constraintTop_toBottomOf="@+id/buttonFavorites" />
-
-    <Button
-        android:id="@+id/buyBook"
-        android:layout_width="164dp"
-        android:layout_height="48dp"
-        android:backgroundTint="#181F37"
-        android:text="Buy in Book Store"
-        android:textColor="#FFFFFF"
-        android:textSize="10sp"
-        app:layout_constraintEnd_toEndOf="@+id/buttonRead"
-        app:layout_constraintStart_toStartOf="@+id/buttonRead"
-        app:layout_constraintTop_toBottomOf="@+id/buttonRead" />
 
     <TextView
         android:id="@+id/textViewBookTitle"
@@ -165,31 +115,18 @@
         app:layout_constraintStart_toStartOf="@+id/guideline3"
         app:layout_constraintTop_toBottomOf="@+id/textViewAuthor" />
 
+
     <TextView
         android:id="@+id/textViewDesc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="4dp"
+        android:layout_marginTop="24dp"
         android:text="BOOK SUMMARY"
         android:textColor="#000000"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/longDescTextView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.4"
-        app:layout_constraintStart_toStartOf="@+id/textView17" />
-
-    <TextView
-        android:id="@+id/longDescTextView"
-        android:layout_width="411dp"
-        android:layout_height="316dp"
-        android:layout_marginBottom="4dp"
-        android:background="#FEFEFE"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/textViewDesc"
-        app:layout_constraintHorizontal_bias="0.438"
-        app:layout_constraintStart_toStartOf="@+id/textViewDesc" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewPages" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
@@ -203,7 +140,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="250dp" />
+        app:layout_constraintGuide_begin="191dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"
@@ -211,4 +148,73 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_begin="16dp" />
+
+    <TextView
+        android:id="@+id/buyBook"
+        android:layout_width="171dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/roundstyle"
+        android:backgroundTint="#181F37"
+        android:padding="8dp"
+        android:text="Buy from store"
+        android:textAlignment="center"
+        android:textColor="#F6F6F8"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="@+id/buttonFavorites"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/buttonFavorites"
+        app:layout_constraintTop_toBottomOf="@+id/buttonFavorites" />
+
+    <TextView
+        android:id="@+id/buttonFavorites"
+        android:layout_width="171dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/roundstyle"
+        android:backgroundTint="#181F37"
+        android:padding="8dp"
+        android:text="Add to favorites"
+        android:textAlignment="center"
+        android:textColor="#F6F6F8"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="@+id/buttonRead"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/buttonRead"
+        app:layout_constraintTop_toBottomOf="@+id/buttonRead" />
+
+    <TextView
+        android:id="@+id/buttonRead"
+        android:layout_width="171dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="68dp"
+        android:padding="8dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/roundstyle"
+        android:backgroundTint="#181F37"
+        android:text="Read"
+        android:textAlignment="center"
+        android:textColor="#F6F6F8"
+        android:textSize="15sp"
+        app:layout_constraintStart_toEndOf="@+id/imageViewBook"
+        app:layout_constraintTop_toTopOf="@+id/imageViewBook" />
+
+    <ScrollView
+        android:layout_width="391dp"
+        android:layout_height="399dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/textViewDesc"
+        app:layout_constraintStart_toStartOf="@+id/textViewDesc"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDesc">
+
+        <TextView
+            android:id="@+id/longDescTextView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="4dp"
+            android:background="#FEFEFE"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

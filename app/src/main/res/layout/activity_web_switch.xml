@@ -7,9 +7,45 @@
     tools:context=".WebSwitchActivity">
 
     <WebView
-        android:id="@+id/webView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp" />
+        android:id="@+id/webview"
+        android:layout_width="410dp"
+        android:layout_height="678dp"
+        android:layout_marginBottom="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+    </WebView>
+
+    <LinearLayout
+        android:layout_width="412dp"
+        android:layout_height="46dp"
+        android:background="#FCFFFF"
+        android:backgroundTint="#4DD0E1"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="211dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:text="Gibbs Browser"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/catalogue_exit2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="150dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
+
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

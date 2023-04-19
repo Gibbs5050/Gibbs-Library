@@ -8,36 +8,51 @@
     android:background="#0E77A6"
     tools:context=".MainActivity">
 
+    <TextView
+        android:id="@+id/loginHomePage2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="76dp"
+        android:text= "@string/skip_to_homepage"
+        android:textColor="#B5E1F5"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/forgotPassword"
+        app:layout_constraintEnd_toStartOf="@+id/forgotPassword"
+        app:layout_constraintTop_toTopOf="@+id/forgotPassword"
+        app:layout_constraintVertical_bias="0.0" />
+
     <EditText
 
         android:id="@+id/editLoginTextEmail"
         android:layout_width="292dp"
         android:layout_height="48dp"
         android:layout_marginStart="57dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="128dp"
         android:layout_marginEnd="57dp"
         android:autofillHints=""
         android:background="@drawable/roundstyle"
-        android:backgroundTint="#BCE4F6"
+        android:backgroundTint="#EDF1F3"
         android:ems="10"
         android:hint="@string/email_addressHint"
         android:inputType="textEmailAddress"
         android:textAlignment="center"
         android:textColor="#131111"
         android:textColorHint="#757575"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
         android:id="@+id/buttonLogin"
         android:layout_width="129dp"
         android:layout_height="48dp"
-        android:layout_marginTop="64dp"
-        android:backgroundTint="#0A1F29"
+        android:layout_marginTop="108dp"
+        android:backgroundTint="#03191C"
+        android:radius="30dp"
         android:text="@string/loginButton"
-        android:textColor="@color/white"
+        android:textColor="#ECF0F2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editLoginTextPassword" />
@@ -46,46 +61,43 @@
         android:id="@+id/editLoginTextPassword"
         android:layout_width="292dp"
         android:layout_height="48dp"
-        android:layout_marginStart="57dp"
         android:layout_marginTop="28dp"
-        android:layout_marginEnd="57dp"
         android:autofillHints=""
         android:background="@drawable/roundstyle"
-        android:backgroundTint="#BCE4F6"
+        android:backgroundTint="#EDF1F3"
         android:ems="10"
         android:hint="@string/LoginPasswordHint"
         android:inputType="textPassword"
         android:textAlignment="center"
         android:textColorHint="#757575"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/editLoginTextEmail"
+        app:layout_constraintStart_toStartOf="@+id/editLoginTextEmail"
         app:layout_constraintTop_toBottomOf="@+id/editLoginTextEmail" />
 
     <TextView
         android:id="@+id/forgotPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
-        android:layout_marginEnd="12dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="4dp"
         android:text="@string/ForgotPassword_textLink"
-        android:textColor="#0B0A0A"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toStartOf="@+id/progressBar"
-        app:layout_constraintTop_toBottomOf="@+id/buttonLogin" />
+        android:textColor="#B6E2F6"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/editLoginTextPassword"
+        app:layout_constraintTop_toBottomOf="@+id/editLoginTextPassword" />
 
     <TextView
         android:id="@+id/RegisterLoginID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="150dp"
+        android:layout_marginBottom="36dp"
         android:text="@string/Register_textLink"
-        android:textColor="#FFFFFF"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="@+id/forgotPassword"
-        app:layout_constraintStart_toEndOf="@+id/forgotPassword"
-        app:layout_constraintTop_toTopOf="@+id/forgotPassword"
-        app:layout_constraintVertical_bias="0.0" />
+        android:textColor="#B6E2F6"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -104,44 +116,52 @@
         app:layout_constraintTop_toBottomOf="@+id/forgotPassword"
         tools:ignore="MissingConstraints" />
 
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="98dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="#ECF0F2"
+        app:layout_constraintEnd_toEndOf="@+id/textView18"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="@+id/textView18"
+        app:layout_constraintTop_toBottomOf="@+id/textView18"
+        app:srcCompat="@drawable/googleg_standard_color_18" />
+
     <TextView
-        android:id="@+id/loginHomePage"
+        android:id="@+id/textView18"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="68dp"
-        android:text="@string/skip_to_homepage"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_marginTop="44dp"
+        android:text="-------------------------- Or Login with --------------------------"
+        android:textColor="#ECF0F2"
+        app:layout_constraintEnd_toEndOf="@+id/buttonLogin"
+        app:layout_constraintStart_toStartOf="@+id/buttonLogin"
+        app:layout_constraintTop_toBottomOf="@+id/buttonLogin" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="287dp"
-        android:layout_height="54dp"
-        android:layout_marginTop="80dp"
-        app:layout_constraintEnd_toEndOf="parent"
+    <ImageView
+        android:id="@+id/bannerReset2"
+        android:layout_width="55dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="56dp"
+        android:contentDescription="TODO"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/gibbs_logo" />
 
-        <ImageView
-            android:id="@+id/bannerReset2"
-            android:layout_width="65dp"
-            android:layout_height="51dp"
-            android:contentDescription="TODO"
-            app:srcCompat="@drawable/bookaholic_user_smile" />
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="243dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="6dp"
-            android:text="@string/gibbs_library_textBanner"
-            android:textColor="#0CD5EF"
-            android:textSize="34sp"
-            android:textStyle="bold" />
-
-    </LinearLayout>
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="243dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="128dp"
+        android:text="ibbs Library"
+        android:textColor="#F2FAFE"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/bannerReset2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/bannerReset2"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

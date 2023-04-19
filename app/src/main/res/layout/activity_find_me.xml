@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/find_me1"
+    android:background="#7FC0DD"
     tools:context=".FindMe">
 
 
@@ -13,12 +13,12 @@
         android:layout_width="401dp"
         android:layout_height="578dp"
         android:layout_marginStart="2dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="8dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.375"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/search_view">
+        app:layout_constraintTop_toBottomOf="@+id/searchView">
 
         <TextView
             android:id="@+id/textViewLocation"
@@ -105,7 +105,7 @@
     </LinearLayout>
 
     <SearchView
-        android:id="@+id/search_view"
+        android:id="@+id/searchView"
         android:layout_width="324dp"
         android:layout_height="38dp"
         android:layout_marginTop="56dp"

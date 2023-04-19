@@ -54,6 +54,7 @@ public class BookRecViewAdapter extends RecyclerView.Adapter<BookRecViewAdapter.
             public void onClick(View v) {
                 //create an intent to switch to book activity on click
                 Intent intent = new Intent(mContext, BookActivity.class);
+                intent.putExtra("book1", books.get(position).getId());
                 mContext.startActivity(intent);
                 Toast.makeText(mContext, books.get(position).getName() + "  Selected and Loaded!", Toast.LENGTH_SHORT).show();
             }

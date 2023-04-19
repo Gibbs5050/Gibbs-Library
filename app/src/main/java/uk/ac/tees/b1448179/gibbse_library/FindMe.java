@@ -21,7 +21,6 @@ import android.widget.Toast;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.auth.FirebaseAuth;
 
 import java.io.IOException;
 import java.util.List;
@@ -77,7 +76,7 @@ public class FindMe extends AppCompatActivity implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
 
-            case R.id.search_view:
+            case R.id.searchView:
                 startActivity(new Intent(this, MyLocalDatabase.class));
         }
     }
@@ -101,6 +100,10 @@ public class FindMe extends AppCompatActivity implements View.OnClickListener {
                                     address.setText("Address: " + addresses.get(0).getAddressLine(0));
                                     city.setText("City: " + addresses.get(0).getLocality());
                                     country.setText("Country: " + addresses.get(0).getCountryName());
+
+                                    //display location
+                                    Toast.makeText(FindMe.this, "Your are Currently in " + country.getText().toString() + "!.\n \n Address: " + address.getText().toString() + " \n \n Have Fun Reading!!", Toast.LENGTH_SHORT).show();
+
                                 } catch (IOException e) {
                                     e.printStackTrace();
                                 }

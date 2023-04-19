@@ -4,15 +4,249 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#D6E6ED"
     tools:context=".AllBooksActivity">
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
+        android:layout_width="399dp"
+        android:layout_height="163dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="4dp"
+        android:scrollbars="none"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:contentDescription="Trending books"
+            android:orientation="horizontal"
+            android:padding="16dp">
+
+            <!-- Book 1 -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/myCatalogue1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="1dp"
+                android:layout_weight="1"
+
+                app:cardBackgroundColor="#D7E7EE"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="20dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/imageCatalogue12"
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/book_list12" />
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <!-- Book 2 -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/myCatalogue11"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="1dp"
+                android:layout_weight="1"
+
+                app:cardBackgroundColor="#D7E7EE"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="20dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/imageCatalogue11"
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/book_image_view" />
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <!-- Book 3 -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/myCatalogue13"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="1dp"
+                android:layout_weight="1"
+
+                app:cardBackgroundColor="#D7E7EE"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="20dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/imageCatalogue13"
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/book_list12" />
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <!-- Book 4 -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/myCatalogue111"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="1dp"
+                android:layout_weight="1"
+
+                app:cardBackgroundColor="#D7E7EE"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="20dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/imageCatalogue111"
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/cat_shelve6" />
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <!-- Book 5 -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/myCatalogue21"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="1dp"
+                android:layout_weight="1"
+
+                app:cardBackgroundColor="#D7E7EE"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="20dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/imageCatalogue21"
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/cat_shelve6" />
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Book 6-->
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/myCatalogue22"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="1dp"
+                android:layout_weight="1"
+
+                app:cardBackgroundColor="#D7E7EE"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="20dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/imageCatalogue22"
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/book_list3" />
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Book 6-->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/myCatalogue23"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="1dp"
+                android:layout_weight="1"
+
+                app:cardBackgroundColor="#D7E7EE"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="20dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/imageCatalogue23"
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/cat_shelve6" />
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Book 6-->
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/myCatalogue24"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="1dp"
+                android:layout_weight="1"
+
+                app:cardBackgroundColor="#D7E7EE"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="20dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/imageCatalogue24"
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/cat_shelve6" />
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/booksRecView"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_margin="15dp"
+        android:layout_marginBottom="12dp"
+        android:background="#D5E5EC"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView"
+        app:layout_constraintVertical_bias="0.027" />
 </androidx.constraintlayout.widget.ConstraintLayout>

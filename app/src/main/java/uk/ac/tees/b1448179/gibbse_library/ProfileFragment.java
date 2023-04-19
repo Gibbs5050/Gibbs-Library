@@ -56,6 +56,7 @@ public class ProfileFragment extends Fragment {
         final TextView ageTextView = v.findViewById(R.id.age);
         @SuppressLint({"MissingInflatedId", "LocalSuppress"}) final TextView genderTextView = v.findViewById(R.id.genderView);
 
+
         reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -71,6 +72,10 @@ public class ProfileFragment extends Fragment {
                     emailTextView.setText(email);
                     ageTextView.setText(age);
                     genderTextView.setText(gender);
+
+                    //get the name to display
+                    String userInput = fullNameTextView.getText().toString();
+                    Toast.makeText(ProfileFragment.this.getActivity(), "Welcome to your profile " + userInput + "!. This User is a " + ageTextView.getText().toString() + "years old "+ genderTextView.getText().toString(), Toast.LENGTH_SHORT).show();
 
                 }
             }

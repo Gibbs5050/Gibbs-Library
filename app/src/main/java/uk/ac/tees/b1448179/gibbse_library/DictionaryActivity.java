@@ -35,7 +35,7 @@ public class DictionaryActivity extends AppCompatActivity {
         setContentView(R.layout.activity_dictionary);
 
         //initialize variables
-        search_view = findViewById(R.id.search_view);
+        search_view = findViewById(R.id.searchView);
         textView_word = findViewById(R.id.textView_word);
         recycler_phonetics = findViewById(R.id.recycler_phonetics);
         recycler_meanings = findViewById(R.id.recycler_meanings);
