@@ -4,7 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
@@ -14,7 +13,6 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -78,7 +76,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
 
                 //navigate to sign in if already created an account
             case R.id.editRegisterSignIn:
-                startActivity(new Intent(this,MainActivity.class));
+                startActivity(new Intent(this, MyLoginActivity.class));
                 break;
             default:
                 break;

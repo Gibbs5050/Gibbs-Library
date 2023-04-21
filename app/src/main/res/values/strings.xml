@@ -57,11 +57,16 @@ Source: Publisher</string>
     <string name="todo">TODO</string>
     <string name="universal_digital">Universal Digital</string>
     <string name="gibbs_library_book_search_engine">Gibbs Library Book Search Engine</string>
+    <string name="termsAndConditions">termsAndConditions</string>
 
-    //for gender suggestions
+    termsAndConditions
+
+<!--    //for gender suggestions-->
     <string-array name="suggestions">
         <item>Male</item>
         <item>Female</item>
     </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

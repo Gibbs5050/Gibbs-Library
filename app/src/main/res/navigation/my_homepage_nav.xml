@@ -7,12 +7,12 @@
 
     <fragment
         android:id="@+id/dashboardFragment"
-        android:name="uk.ac.tees.b1448179.gibbse_library.DashboardFragment"
+        android:name="uk.ac.tees.b1448179.gibbse_library.AllFragmentsContainer.HomeFragment"
         android:label="fragment_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/profileFragment"
-        android:name="uk.ac.tees.b1448179.gibbse_library.ProfileFragment"
+        android:name="uk.ac.tees.b1448179.gibbse_library.AllFragmentsContainer.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
     <fragment
@@ -20,4 +20,9 @@
         android:name="uk.ac.tees.b1448179.gibbse_library.SettingsFragment"
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/catalogueFragment2"
+        android:name="uk.ac.tees.b1448179.gibbse_library.AllFragmentsContainer.CatalogueFragment"
+        android:label="fragment_catalogue"
+        tools:layout="@layout/fragment_catalogue" />
 </navigation>

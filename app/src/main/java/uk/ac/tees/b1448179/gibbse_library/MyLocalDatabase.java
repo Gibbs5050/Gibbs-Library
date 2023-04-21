@@ -37,7 +37,7 @@ public class MyLocalDatabase extends AppCompatActivity {
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
                 Toast.makeText(MyLocalDatabase.this, "Logged out successfully!!", Toast.LENGTH_LONG).show();
-                startActivity(new Intent(MyLocalDatabase.this,MainActivity.class));
+                startActivity(new Intent(MyLocalDatabase.this, MyLoginActivity.class));
             }
         });
 

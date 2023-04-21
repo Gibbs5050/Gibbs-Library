@@ -11,15 +11,12 @@ import android.app.NotificationManager;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -73,7 +70,7 @@ public class LandingPage extends AppCompatActivity implements View.OnClickListen
         switch (v.getId()) {
 
             case R.id.clickLogin:
-               startActivity(new Intent(this,MainActivity.class));
+               startActivity(new Intent(this, MyLoginActivity.class));
                 Toast.makeText(LandingPage.this, "Please Login to continue!", Toast.LENGTH_SHORT).show();
                //create colour in colour.xml for on click colour change to show when clicked
                 clickLogin.setTextColor(getResources().getColor(R.color.amber));
@@ -124,7 +121,7 @@ public class LandingPage extends AppCompatActivity implements View.OnClickListen
 
                             Toast.makeText(LandingPage.this, "Hello "+value+"!! :) \n Welcome To Gibbs Library!   :)", Toast.LENGTH_SHORT).show();
 
-                            Intent myIntent = new Intent(LandingPage.this, MainActivity2.class);
+                            Intent myIntent = new Intent(LandingPage.this, MainActivity.class);
 //
                             startActivity(myIntent);
 
@@ -147,10 +144,10 @@ public class LandingPage extends AppCompatActivity implements View.OnClickListen
 //                    @Override
 //                    public void onClick(View v) {
 //                        // handle intent positive button click
-//                        Intent myIntent = new Intent(DashboardFragment.this, SearchResponse.class);
+//                        Intent myIntent = new Intent(HomeFragment.this, SearchResponse.class);
 ////                        myIntent.putExtra("url","https://google.com/");//show web view
 //                        startActivity(myIntent);
-////                        DashboardFragment.this.startActivity(myIntent);
+////                        HomeFragment.this.startActivity(myIntent);
 //                    }
 //                });
 

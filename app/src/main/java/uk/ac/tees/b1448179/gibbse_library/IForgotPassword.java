@@ -1,7 +1,5 @@
 package uk.ac.tees.b1448179.gibbse_library;
 
-import static uk.ac.tees.b1448179.gibbse_library.R.id.resetLogin;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -71,7 +69,7 @@ public class IForgotPassword extends AppCompatActivity implements View.OnClickLi
                 public void onComplete(@NonNull Task<Void> task) {
                     if (task.isSuccessful()){
                         Toast.makeText(IForgotPassword.this, "Reset Link Sent to Email", Toast.LENGTH_LONG).show();
-                        startActivity(new Intent(IForgotPassword.this,MainActivity.class));  //redirect to login layout
+                        startActivity(new Intent(IForgotPassword.this, MyLoginActivity.class));  //redirect to login layout
 
 
                     }else{
@@ -89,7 +87,7 @@ public class IForgotPassword extends AppCompatActivity implements View.OnClickLi
             // startActivity(new Intent(this, MainActivity.class));
             // break;
             case R.id.resetLogin:
-                startActivity(new Intent(this, MainActivity.class));
+                startActivity(new Intent(this, MyLoginActivity.class));
 
 
         }

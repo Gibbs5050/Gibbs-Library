@@ -127,13 +127,13 @@ public class SearchResponse extends AppCompatActivity {
 
 //
 //                            dialog.dismiss();
-////                        DashboardFragment.this.startActivity(myIntent);
+////                        HomeFragment.this.startActivity(myIntent);
 
 
 
 
 //                //call API
-//                RequestManager manager = new RequestManager(DashboardFragment.this.getActivity());
+//                RequestManager manager = new RequestManager(HomeFragment.this.getActivity());
 //                manager.getWordMeaning(listener,query);
 
                 return true;
@@ -212,7 +212,7 @@ public class SearchResponse extends AppCompatActivity {
 //                        myIntent.putExtra("url","https://google.com/");//show web view
 //                        startActivity(myIntent);
 //                        dialog.dismiss();
-////                        DashboardFragment.this.startActivity(myIntent);
+////                        HomeFragment.this.startActivity(myIntent);
 //                    }
 //                });
 //            }
@@ -227,10 +227,10 @@ public class SearchResponse extends AppCompatActivity {
 //                progressDialog.show();
 //
 //                //call API
-////                RequestManager manager = new RequestManager(DashboardFragment.this.getActivity());
-////                Intent myIntent = new Intent(DashboardFragment.this.getActivity(), DictionaryActivity.class);
-////                DashboardFragment.this.startActivity(myIntent); //implement the intent ie switch to the fragment required
-//                Intent myIntent = new Intent(DashboardFragment.this.getActivity(), DictionaryActivity.class);
+////                RequestManager manager = new RequestManager(HomeFragment.this.getActivity());
+////                Intent myIntent = new Intent(HomeFragment.this.getActivity(), DictionaryActivity.class);
+////                HomeFragment.this.startActivity(myIntent); //implement the intent ie switch to the fragment required
+//                Intent myIntent = new Intent(HomeFragment.this.getActivity(), DictionaryActivity.class);
 //                            myIntent.putExtra(query,query);//show web view
 //                            startActivity(myIntent);
 ////                manager.getWordMeaning(listener,query);
@@ -257,7 +257,7 @@ public class SearchResponse extends AppCompatActivity {
 ////                    //create a dialog prompt
 ////
 ////                    //dialog to confirm if you want to search dictionary or web
-////                    AlertDialog.Builder builder = new AlertDialog.Builder(DashboardFragment.this.getActivity());
+////                    AlertDialog.Builder builder = new AlertDialog.Builder(HomeFragment.this.getActivity());
 ////                    View customLayout = getLayoutInflater().inflate(R.layout.gibbs_dialog, null); //use designed layout as custom layout
 ////                    builder.setView(customLayout);
 ////                    //customise dialog layout
@@ -280,8 +280,8 @@ public class SearchResponse extends AppCompatActivity {
 //////
 //////
 //////                            Toast.makeText(getContext(), "Fantastic! Opening Dictionary....!!", Toast.LENGTH_LONG).show();
-//////                            Intent myIntent = new Intent(DashboardFragment.this.getActivity(),DictionaryActivity.class);
-//////                            DashboardFragment.this.startActivity(myIntent);
+//////                            Intent myIntent = new Intent(HomeFragment.this.getActivity(),DictionaryActivity.class);
+//////                            HomeFragment.this.startActivity(myIntent);
 ////////                            dialog.dismiss();
 //////                        }
 //////                    });
@@ -359,13 +359,13 @@ public class SearchResponse extends AppCompatActivity {
 ////////
 ////////
 ////////
-////////                            Intent myIntent = new Intent(DashboardFragment.this.getActivity(), WebSwitchActivity.class);
+////////                            Intent myIntent = new Intent(HomeFragment.this.getActivity(), WebSwitchActivity.class);
 ////////                            myIntent.putExtra("url","http://www.google.com/search?q=");//show web view
 ////////                            startActivity(myIntent);
 //////
 //////
 //////                            dialog.dismiss();
-////////                        DashboardFragment.this.startActivity(myIntent);
+////////                        HomeFragment.this.startActivity(myIntent);
 //////                        }
 //////                    });
 //////
@@ -373,7 +373,7 @@ public class SearchResponse extends AppCompatActivity {
 //////
 //////
 ////////                //call API
-////////                RequestManager manager = new RequestManager(DashboardFragment.this.getActivity());
+////////                RequestManager manager = new RequestManager(HomeFragment.this.getActivity());
 ////////                manager.getWordMeaning(listener,query);
 //////
 //////                return true;

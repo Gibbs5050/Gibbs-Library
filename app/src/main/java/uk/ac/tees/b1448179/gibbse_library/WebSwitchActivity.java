@@ -9,8 +9,6 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ImageView;
 
-import okhttp3.Response;
-
 public class WebSwitchActivity extends AppCompatActivity {
 
     private WebView webView;
@@ -40,7 +38,7 @@ public class WebSwitchActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     // Close the activity containing the web view
 //                    finish();
-                    Intent myIntent = new Intent(WebSwitchActivity.this,MainActivity2.class);
+                    Intent myIntent = new Intent(WebSwitchActivity.this, MainActivity.class);
                     WebSwitchActivity.this.startActivity(myIntent);
                 }
             });

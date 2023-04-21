@@ -1,4 +1,4 @@
-package uk.ac.tees.b1448179.gibbse_library;
+package uk.ac.tees.b1448179.gibbse_library.AllFragmentsContainer;
 
 //import static androidx.core.content.ContextCompat.Api23Impl.getSystemService;
 
@@ -12,10 +12,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.widget.SearchView;
 import androidx.cardview.widget.CardView;
-import androidx.core.app.NotificationCompat;
-import androidx.core.app.NotificationManagerCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
@@ -33,30 +30,29 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.gson.Gson;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.net.URLEncoder;
 import java.util.ArrayList;
-import java.util.List;
 
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
+import uk.ac.tees.b1448179.gibbse_library.AllBooksActivity;
+import uk.ac.tees.b1448179.gibbse_library.BookRecViewAdapter;
+import uk.ac.tees.b1448179.gibbse_library.Books;
+import uk.ac.tees.b1448179.gibbse_library.DictionaryActivity;
+import uk.ac.tees.b1448179.gibbse_library.FavouriteBooks;
+import uk.ac.tees.b1448179.gibbse_library.FindMe;
+import uk.ac.tees.b1448179.gibbse_library.LibraryCatalogue;
+import uk.ac.tees.b1448179.gibbse_library.MyLoginActivity;
+import uk.ac.tees.b1448179.gibbse_library.OnlineBookSites;
+import uk.ac.tees.b1448179.gibbse_library.R;
+import uk.ac.tees.b1448179.gibbse_library.WebSwitchActivity;
 //import android.widget.EditText;
 
 
 /*
  * A simple {@link Fragment} subclass.
- * Use the {@link DashboardFragment#newInstance} factory method to
+ * Use the {@link HomeFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class DashboardFragment extends Fragment {
+public class HomeFragment extends Fragment {
 
     //create instance of allbooks activities in fragment(create local variable)
     private AllBooksActivity allBooksActivity;
@@ -70,7 +66,7 @@ public class DashboardFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_dashboard, container,false);
+        View v = inflater.inflate(R.layout.fragment_home, container,false);
 
         adapter = new BookRecViewAdapter(this.getActivity());
         booksRecView = v.findViewById(R.id.booksRecView);
@@ -153,7 +149,7 @@ public class DashboardFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 //create a dialog prompt
-                AlertDialog.Builder builder = new AlertDialog.Builder(DashboardFragment.this.getActivity());
+                AlertDialog.Builder builder = new AlertDialog.Builder(HomeFragment.this.getActivity());
                 View customLayout = getLayoutInflater().inflate(R.layout.gibbs_dialog, null); //use designed layout as custom layout
                 builder.setView(customLayout);
                 //customise dialog layout
@@ -177,7 +173,7 @@ public class DashboardFragment extends Fragment {
                         // handle negative button click
 
 
-                        Intent myIntent = new Intent(DashboardFragment.this.getActivity(), DictionaryActivity.class);
+                        Intent myIntent = new Intent(HomeFragment.this.getActivity(), DictionaryActivity.class);
 //                myIntent.putExtra(query,query);//show web view
                         startActivity(myIntent);
                         dialog.dismiss();
@@ -191,10 +187,10 @@ public class DashboardFragment extends Fragment {
                         // handle intent positive button click
                         String value = buttonSearch.getText().toString();
 
-                        Intent myIntent = new Intent(DashboardFragment.this.getActivity(), WebSwitchActivity.class);
+                        Intent myIntent = new Intent(HomeFragment.this.getActivity(), WebSwitchActivity.class);
                         myIntent.putExtra("url","https://www.google.com/search?tbm=bks&q="+ value);//show web view
                         startActivity(myIntent);
-//                        DashboardFragment.this.startActivity(myIntent);
+//                        HomeFragment.this.startActivity(myIntent);
                         dialog.dismiss();
                     }
                 });
@@ -217,10 +213,10 @@ public class DashboardFragment extends Fragment {
 ////                progressDialog.show();
 ////
 ////                //call API
-//////                RequestManager manager = new RequestManager(DashboardFragment.this.getActivity());
-////                Intent myIntent = new Intent(DashboardFragment.this.getActivity(), DictionaryActivity.class);
-////                DashboardFragment.this.startActivity(myIntent); //implement the intent ie switch to the fragment required
-//                Intent myIntent = new Intent(DashboardFragment.this.getActivity(), DictionaryActivity.class);
+//////                RequestManager manager = new RequestManager(HomeFragment.this.getActivity());
+////                Intent myIntent = new Intent(HomeFragment.this.getActivity(), DictionaryActivity.class);
+////                HomeFragment.this.startActivity(myIntent); //implement the intent ie switch to the fragment required
+//                Intent myIntent = new Intent(HomeFragment.this.getActivity(), DictionaryActivity.class);
 ////                myIntent.putExtra(query,query);//show web view
 //                startActivity(myIntent);
 ////                manager.getWordMeaning(listener,query);
@@ -237,10 +233,10 @@ public class DashboardFragment extends Fragment {
 //                progressDialog.show();
 //
 //                //call API
-////                RequestManager manager = new RequestManager(DashboardFragment.this.getActivity());
-////                Intent myIntent = new Intent(DashboardFragment.this.getActivity(), DictionaryActivity.class);
-////                DashboardFragment.this.startActivity(myIntent); //implement the intent ie switch to the fragment required
-//                Intent myIntent = new Intent(DashboardFragment.this.getActivity(), DictionaryActivity.class);
+////                RequestManager manager = new RequestManager(HomeFragment.this.getActivity());
+////                Intent myIntent = new Intent(HomeFragment.this.getActivity(), DictionaryActivity.class);
+////                HomeFragment.this.startActivity(myIntent); //implement the intent ie switch to the fragment required
+//                Intent myIntent = new Intent(HomeFragment.this.getActivity(), DictionaryActivity.class);
 //                            myIntent.putExtra(query,query);//show web view
 //                            startActivity(myIntent);
 ////                manager.getWordMeaning(listener,query);
@@ -267,7 +263,7 @@ public class DashboardFragment extends Fragment {
 ////                    //create a dialog prompt
 ////
 ////                    //dialog to confirm if you want to search dictionary or web
-////                    AlertDialog.Builder builder = new AlertDialog.Builder(DashboardFragment.this.getActivity());
+////                    AlertDialog.Builder builder = new AlertDialog.Builder(HomeFragment.this.getActivity());
 ////                    View customLayout = getLayoutInflater().inflate(R.layout.gibbs_dialog, null); //use designed layout as custom layout
 ////                    builder.setView(customLayout);
 ////                    //customise dialog layout
@@ -290,8 +286,8 @@ public class DashboardFragment extends Fragment {
 //////
 //////
 //////                            Toast.makeText(getContext(), "Fantastic! Opening Dictionary....!!", Toast.LENGTH_LONG).show();
-//////                            Intent myIntent = new Intent(DashboardFragment.this.getActivity(),DictionaryActivity.class);
-//////                            DashboardFragment.this.startActivity(myIntent);
+//////                            Intent myIntent = new Intent(HomeFragment.this.getActivity(),DictionaryActivity.class);
+//////                            HomeFragment.this.startActivity(myIntent);
 ////////                            dialog.dismiss();
 //////                        }
 //////                    });
@@ -369,13 +365,13 @@ public class DashboardFragment extends Fragment {
 ////////
 ////////
 ////////
-////////                            Intent myIntent = new Intent(DashboardFragment.this.getActivity(), WebSwitchActivity.class);
+////////                            Intent myIntent = new Intent(HomeFragment.this.getActivity(), WebSwitchActivity.class);
 ////////                            myIntent.putExtra("url","http://www.google.com/search?q=");//show web view
 ////////                            startActivity(myIntent);
 //////
 //////
 //////                            dialog.dismiss();
-////////                        DashboardFragment.this.startActivity(myIntent);
+////////                        HomeFragment.this.startActivity(myIntent);
 //////                        }
 //////                    });
 //////
@@ -383,7 +379,7 @@ public class DashboardFragment extends Fragment {
 //////
 //////
 ////////                //call API
-////////                RequestManager manager = new RequestManager(DashboardFragment.this.getActivity());
+////////                RequestManager manager = new RequestManager(HomeFragment.this.getActivity());
 ////////                manager.getWordMeaning(listener,query);
 //////
 //////                return true;
@@ -510,8 +506,8 @@ public class DashboardFragment extends Fragment {
         textSpotMe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myIntent = new Intent(DashboardFragment.this.getActivity(),FindMe.class);
-                DashboardFragment.this.startActivity(myIntent);
+                Intent myIntent = new Intent(HomeFragment.this.getActivity(), FindMe.class);
+                HomeFragment.this.startActivity(myIntent);
             }
         });
 
@@ -531,7 +527,7 @@ public class DashboardFragment extends Fragment {
             public void onClick(View v) {
 
                 auth.signOut();
-                startActivity(new Intent(getContext(),MainActivity.class));
+                startActivity(new Intent(getContext(), MyLoginActivity.class));
                 Toast.makeText(getContext(), "Logged out successfully!!", Toast.LENGTH_LONG).show();
 
                 // Define the animation
@@ -549,8 +545,8 @@ public class DashboardFragment extends Fragment {
         drawer_shelve.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myIntent = new Intent(DashboardFragment.this.getActivity(), LibraryCatalogue.class);
-                DashboardFragment.this.startActivity(myIntent); //implement the intent ie switch to the fragment required
+                Intent myIntent = new Intent(HomeFragment.this.getActivity(), LibraryCatalogue.class);
+                HomeFragment.this.startActivity(myIntent); //implement the intent ie switch to the fragment required
             }
         });
 
@@ -559,8 +555,8 @@ public class DashboardFragment extends Fragment {
         trendingBooks.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myIntent = new Intent(DashboardFragment.this.getActivity(), AllBooksActivity.class);
-                DashboardFragment.this.startActivity(myIntent); //implement the intent ie switch to the fragment required
+                Intent myIntent = new Intent(HomeFragment.this.getActivity(), AllBooksActivity.class);
+                HomeFragment.this.startActivity(myIntent); //implement the intent ie switch to the fragment required
             }
         });
 
@@ -587,8 +583,8 @@ public class DashboardFragment extends Fragment {
         topBookStores.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myIntent = new Intent(DashboardFragment.this.getActivity(), OnlineBookSites.class);
-                DashboardFragment.this.startActivity(myIntent); //implement the intent ie switch to the fragment required
+                Intent myIntent = new Intent(HomeFragment.this.getActivity(), OnlineBookSites.class);
+                HomeFragment.this.startActivity(myIntent); //implement the intent ie switch to the fragment required
 
                     }
                 });
@@ -598,8 +594,8 @@ public class DashboardFragment extends Fragment {
         myDictionary.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myIntent = new Intent(DashboardFragment.this.getActivity(),DictionaryActivity.class);
-                DashboardFragment.this.startActivity(myIntent);
+                Intent myIntent = new Intent(HomeFragment.this.getActivity(),DictionaryActivity.class);
+                HomeFragment.this.startActivity(myIntent);
             }
         });
 
@@ -615,7 +611,7 @@ public class DashboardFragment extends Fragment {
             public void onClick(View v) {
 
                 //create a dialog prompt
-                AlertDialog.Builder builder = new AlertDialog.Builder(DashboardFragment.this.getActivity());
+                AlertDialog.Builder builder = new AlertDialog.Builder(HomeFragment.this.getActivity());
                 View customLayout = getLayoutInflater().inflate(R.layout.gibbs_dialog, null); //use designed layout as custom layout
                 builder.setView(customLayout);
                 //customise dialog layout
@@ -656,7 +652,7 @@ public class DashboardFragment extends Fragment {
             public void onClick(View v) {
 
                 // handle intent positive button click
-                Intent myIntent = new Intent(DashboardFragment.this.getActivity(), WebSwitchActivity.class);
+                Intent myIntent = new Intent(HomeFragment.this.getActivity(), WebSwitchActivity.class);
                 myIntent.putExtra("url","https://google.com/");//show web view
                 startActivity(myIntent);
         }
@@ -667,8 +663,8 @@ public class DashboardFragment extends Fragment {
         myFavorite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myIntent = new Intent(DashboardFragment.this.getActivity(), FavouriteBooks.class);
-                DashboardFragment.this.startActivity(myIntent); //implement the intent ie switch to the fragment required
+                Intent myIntent = new Intent(HomeFragment.this.getActivity(), FavouriteBooks.class);
+                HomeFragment.this.startActivity(myIntent); //implement the intent ie switch to the fragment required
             }
         });
 

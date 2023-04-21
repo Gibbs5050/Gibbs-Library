@@ -1,7 +1,5 @@
 package uk.ac.tees.b1448179.gibbse_library;
 
-import static androidx.core.app.ActivityCompat.recreate;
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
@@ -22,11 +20,8 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 //for map
 import androidx.core.app.ActivityCompat;
@@ -37,12 +32,6 @@ import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
-import android.widget.ToggleButton;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
@@ -146,7 +135,7 @@ public class SettingsFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 auth.signOut();
-                startActivity(new Intent(getContext(),MainActivity.class));
+                startActivity(new Intent(getContext(), MyLoginActivity.class));
                 Toast.makeText(getContext(), "Logged out successfully!!", Toast.LENGTH_LONG).show();
             }
         });

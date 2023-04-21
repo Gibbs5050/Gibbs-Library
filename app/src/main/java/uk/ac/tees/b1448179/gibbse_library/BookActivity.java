@@ -15,8 +15,8 @@ import com.bumptech.glide.Glide;
 public class BookActivity extends AppCompatActivity {
 
     private TextView txtBookName, txtAuthor, txtPages, txtDescription, longDescTextView;
-    private TextView btnContinueReading, btnAddToFavorites, btnAddToAlreadyRead, btnBuyBook;
-    private ImageView bookImage;
+    private TextView btnContinueReading, btnAddToAlreadyRead;
+    private ImageView bookImage, btnAddToFavorites, btnBuyBook,catalogue_exitBook;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +25,16 @@ public class BookActivity extends AppCompatActivity {
 
         //run mtd init views
         initViews();
+
+        //exit of activity click to close
+        catalogue_exitBook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Close the activity containing the web view
+                finish();
+            }
+        });
+
         String longDescription = "Harry Potter and the Chamber, Harry Potter and the Chamber , Harry Potter and the Chamber, Harry Potter and the Chamber, Harry Potter and the Chamber, Harry Potter and the Chamber, Harry Potter and the Chamber, Harry Potter and the Chamber, Harry Potter and the Chamber" +
                 ", Harry Potter and the Chamber, Harry Potter and the Chamber, Harry Potter and the Chamber, Harry Potter and the Chamber, Harry Potter and the Chamber";
         String longDescription1 = "A philosophical exploration of the entire seven-book Harry Potter series\n" +
@@ -83,6 +93,8 @@ public class BookActivity extends AppCompatActivity {
         txtBookName = findViewById(R.id.textViewBookName);
         txtPages = findViewById(R.id.textViewPages);
         txtDescription = findViewById(R.id.longDescTextView);
+        btnBuyBook = findViewById(R.id.buyBook);
+        catalogue_exitBook = findViewById(R.id.catalogue_exitBook);
 
         btnAddToAlreadyRead = findViewById(R.id.buttonRead);
 
