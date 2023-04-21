@@ -9,6 +9,8 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ImageView;
 
+import okhttp3.Response;
+
 public class WebSwitchActivity extends AppCompatActivity {
 
     private WebView webView;
@@ -17,6 +19,9 @@ public class WebSwitchActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_web_switch);
+
+//        Response response = client.newCall(request).execute();
+//        String jsonResponse = response.body().string();
 
 
         Intent intent = getIntent();

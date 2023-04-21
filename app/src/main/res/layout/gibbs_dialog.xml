@@ -45,28 +45,30 @@
         android:orientation="horizontal"
         android:padding="8dp">
 
-        <Button
+        <TextView
             android:id="@+id/negative_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="8dp"
+            android:layout_marginRight="10dp"
             android:background="@drawable/roundstyle"
-            android:backgroundTint="#F8DDDD"
-            android:padding="1dp"
+            android:backgroundTint="#379AA7"
+            android:padding="10dp"
             android:text="Cancel"
+            android:textAlignment="center"
             android:textColor="@android:color/black"
-            android:textSize="16sp" />
+            android:textSize="25sp" />
 
-        <Button
+        <TextView
             android:id="@+id/positive_button"
-            android:layout_width="wrap_content"
+            android:layout_width="78dp"
             android:layout_height="wrap_content"
             android:background="@drawable/roundstyle"
-            android:backgroundTint="#F8DDDD"
-            android:padding="1dp"
-            android:text="OK"
+            android:backgroundTint="#379AA7"
+            android:padding="10dp"
+            android:text="Ok"
+            android:textAlignment="center"
             android:textColor="@android:color/black"
-            android:textSize="16sp" />
+            android:textSize="25sp" />
 
     </LinearLayout>
 

@@ -1,25 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
+    android:background="@drawable/roundstyle"
+    android:backgroundTint="#F2F9FC"
     android:layout_height="wrap_content">
 
+
     <EditText
-        android:id="@+id/inputEditText"
+        android:id="@+id/nameInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter input here" />
+        android:layout_marginTop="5dp"
+        android:textColorHint="#C4B5B2B2"
+        android:textColor="@color/black"
+        android:hint="Please enter your name to continue" />
 
     <Button
         android:id="@+id/submitButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/inputEditText"
+        android:layout_below="@+id/nameInput"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="0dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="0dp"
         android:backgroundTint="#0D2D32"
+        android:textColor="@color/white"
         android:text="Submit" />
 
+    <TextView
+        android:id="@+id/textView231"
+        android:layout_width="211dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/submitButton"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="71dp"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="38dp"
+        android:layout_marginBottom="28dp"
+        android:layout_toEndOf="@+id/submitButton"
+        android:gravity="center_horizontal"
+        android:padding="6dp"
+        android:text="@string/powered_by_gibbs_techText"
+        android:textColor="#06181E"
+        android:textSize="15sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </RelativeLayout>

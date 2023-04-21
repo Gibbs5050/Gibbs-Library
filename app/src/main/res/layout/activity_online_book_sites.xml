@@ -144,8 +144,8 @@
 
     <ImageView
         android:id="@+id/imageView9"
-        android:layout_width="411dp"
-        android:layout_height="203dp"
+        android:layout_width="424dp"
+        android:layout_height="112dp"
         android:layout_marginTop="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -162,6 +162,7 @@
         android:textColor="#DFD09E"
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView15" />
 

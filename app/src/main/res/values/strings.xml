@@ -29,7 +29,7 @@ Source: Publisher</string>
     <string name="joinExtra">Join the winning Team!</string>
     <string name="register_nowText">Register Now</string>
     <string name="TextOneLogin">Login</string>
-    <string name="powered_by_gibbs_techText">Powered by Gibbs Tech</string>
+    <string name="powered_by_gibbs_techText">Powered by Gibbs Tech©</string>
     <string name="gibbs_libraryText">GET STARTED!</string>
     <string name="full_name">Full Name</string>
     <string name="passwordRegisterHint">Password</string>
@@ -56,6 +56,7 @@ Source: Publisher</string>
     <string name="enter_email_address">Enter Email Address</string>
     <string name="todo">TODO</string>
     <string name="universal_digital">Universal Digital</string>
+    <string name="gibbs_library_book_search_engine">Gibbs Library Book Search Engine</string>
 
     //for gender suggestions
     <string-array name="suggestions">
