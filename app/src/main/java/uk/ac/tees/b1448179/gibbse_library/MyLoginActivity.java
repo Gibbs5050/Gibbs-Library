@@ -33,7 +33,7 @@ public class MyLoginActivity extends AppCompatActivity implements View.OnClickLi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
 
         //initialise variables and set action listener
         register = (TextView) findViewById(R.id.RegisterLoginID);

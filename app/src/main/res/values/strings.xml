@@ -61,7 +61,7 @@ Source: Publisher</string>
 
     termsAndConditions
 
-<!--    //for gender suggestions-->
+    <!--    //for gender suggestions-->
     <string-array name="suggestions">
         <item>Male</item>
         <item>Female</item>

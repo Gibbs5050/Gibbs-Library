@@ -14,7 +14,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#D5E5EC"
+        android:background="#0E77A6"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,7 +25,7 @@
             android:layout_width="match_parent"
             android:layout_height="51dp"
             android:background="#0E77A6"
-            android:backgroundTint="#D6E6ED"
+            android:backgroundTint="#0E77A6"
             android:gravity="center_vertical"
             android:orientation="horizontal"
             android:paddingStart="15dp"
@@ -42,7 +42,7 @@
                 android:src="@drawable/ic_menu_24"
 
 
-                app:tint="#0E77A6" />
+                app:tint="#000000" />
 
             <ImageView
                 android:id="@+id/imageView12"
@@ -50,14 +50,14 @@
                 android:layout_height="49dp"
                 android:layout_marginStart="80dp"
                 android:layout_marginLeft="10dp"
-                android:src="@drawable/gibbs_icon_new1"
+                android:src="@drawable/gibbs_logo"
                 android:visibility="visible" />
 
             <TextView
                 android:id="@+id/textTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="-5dp"
+                android:layout_marginStart="-6dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="5dp"
                 android:text="ibbs Library"
@@ -81,7 +81,7 @@
             android:layout_width="match_parent"
             android:layout_height="646dp"
             android:layout_marginTop="10dp"
-            android:background="#F2F9FD"
+            android:background="#9BCBE6"
             app:layout_constraintEnd_toEndOf="parent"
 
             app:layout_constraintHorizontal_bias="0.0"
@@ -95,11 +95,22 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp">
 
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/booksRecView1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="1dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="#9BCBE6"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView204" />
+
                 <LinearLayout
                     android:id="@+id/linearLayout2"
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="-1dp"
                     android:orientation="horizontal"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
@@ -117,12 +128,13 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/viewAllTopPicks"
+                        android:id="@+id/viewAllTrending"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="70dp"
+                        android:layout_marginLeft="110dp"
+                        android:layout_marginTop="3dp"
                         android:text="View all"
-                        android:textColor="#7EBFDC" />
+                        android:textColor="#0E77A5" />
 
                 </LinearLayout>
 
@@ -130,7 +142,7 @@
                     android:id="@+id/horizontalScrollView2"
                     android:layout_width="511dp"
                     android:layout_height="209dp"
-                    android:layout_marginTop="-20dp"
+                    android:layout_marginTop="-28dp"
                     android:scrollbars="none"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.19"
@@ -140,7 +152,7 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_margin="5dp"
                         android:contentDescription="Trending books"
                         android:orientation="horizontal"
@@ -155,7 +167,7 @@
                             android:layout_marginStart="0dp"
                             android:layout_weight="1"
 
-                            app:cardBackgroundColor="#D7E7EE"
+                            app:cardBackgroundColor="#000000"
                             app:cardCornerRadius="20dp"
                             app:cardElevation="20dp">
 
@@ -181,7 +193,7 @@
                             android:layout_margin="5dp"
                             android:layout_weight="1"
 
-                            app:cardBackgroundColor="#D7E7EE"
+                            app:cardBackgroundColor="#000000"
                             app:cardCornerRadius="20dp"
                             app:cardElevation="20dp">
 
@@ -208,7 +220,7 @@
                             android:layout_marginLeft="4dp"
                             android:layout_weight="1"
 
-                            app:cardBackgroundColor="#D7E7EE"
+                            app:cardBackgroundColor="#000000"
                             app:cardCornerRadius="20dp"
                             app:cardElevation="20dp">
 
@@ -234,7 +246,7 @@
                             android:layout_margin="5dp"
                             android:layout_weight="1"
 
-                            app:cardBackgroundColor="#D7E7EE"
+                            app:cardBackgroundColor="#000000"
                             app:cardCornerRadius="20dp"
                             app:cardElevation="20dp">
 
@@ -260,7 +272,7 @@
                             android:layout_margin="5dp"
                             android:layout_weight="1"
 
-                            app:cardBackgroundColor="#D7E7EE"
+                            app:cardBackgroundColor="#000000"
                             app:cardCornerRadius="20dp"
                             app:cardElevation="20dp">
 
@@ -298,61 +310,14 @@
                                     android:id="@+id/imageCatalogu22"
                                     android:layout_width="100dp"
                                     android:layout_height="match_parent"
-                                    android:src="@drawable/book_list3" />
+                                    android:src="#9ACAE5" />
 
                             </RelativeLayout>
                         </androidx.cardview.widget.CardView>
 
                         <!-- Book 7-->
-                        <androidx.cardview.widget.CardView
-                            android:id="@+id/myCatalogu23"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_margin="5dp"
-                            android:layout_weight="1"
-
-                            app:cardBackgroundColor="#D7E7EE"
-                            app:cardCornerRadius="20dp"
-                            app:cardElevation="20dp">
-
-                            <RelativeLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent">
-
-                                <ImageView
-                                    android:id="@+id/imageCatalogu23"
-                                    android:layout_width="100dp"
-                                    android:layout_height="match_parent"
-                                    android:src="@drawable/cat_shelve6" />
-
-                            </RelativeLayout>
-                        </androidx.cardview.widget.CardView>
 
                         <!-- Book 8-->
-
-                        <androidx.cardview.widget.CardView
-                            android:id="@+id/myCatalogu24"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_margin="5dp"
-                            android:layout_weight="1"
-
-                            app:cardBackgroundColor="#D7E7EE"
-                            app:cardCornerRadius="20dp"
-                            app:cardElevation="20dp">
-
-                            <RelativeLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent">
-
-                                <ImageView
-                                    android:id="@+id/imageCatalogu24"
-                                    android:layout_width="100dp"
-                                    android:layout_height="match_parent"
-                                    android:src="@drawable/cat_shelve6" />
-
-                            </RelativeLayout>
-                        </androidx.cardview.widget.CardView>
 
                     </LinearLayout>
 
@@ -368,11 +333,13 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="1dp"
                     android:layout_marginLeft="10dp"
-                    android:background="#F2F9FC"
+                    android:background="#9BCBE6"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+                    app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+                </androidx.recyclerview.widget.RecyclerView>
 
                 <LinearLayout
                     android:id="@+id/linearLayout3"
@@ -394,13 +361,40 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/viewAllTrending"
+                        android:id="@+id/viewAllTopPicks"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="6dp"
-                        android:text="View All"
-                        android:textColor="#7EBEDB" />
+                        android:layout_marginStart="45dp"
+                        android:layout_marginTop="10dp"
+                        android:text="View all"
+                        android:textColor="#0E77A5" />
+
                 </LinearLayout>
+
+                <TextView
+                    android:id="@+id/textView204"
+                    android:layout_width="235dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="10dp"
+                    android:padding="4dp"
+                    android:text="   Now Reading"
+                    android:textColor="#25353C"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/booksRecView" />
+
+                <TextView
+                    android:id="@+id/viewAllTrending4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="108dp"
+                    android:text="View All"
+                    android:textColor="#0E77A5"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView204"
+                    app:layout_constraintStart_toEndOf="@+id/textView204"
+                    app:layout_constraintTop_toTopOf="@+id/textView204"
+                    app:layout_constraintVertical_bias="1.0" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -514,7 +508,7 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginBottom="10dp"
                 android:backgroundTint="#7EBFDC"
-                android:text="Explore"
+                android:text="File Manager"
                 android:textColor="#FFFFFF"
                 app:layout_constraintBottom_toTopOf="@+id/scrollView2"
                 app:layout_constraintEnd_toEndOf="@+id/scrollView2"
@@ -777,7 +771,7 @@
                         </androidx.cardview.widget.CardView>
 
                         <androidx.cardview.widget.CardView
-                            android:id="@+id/myBrowser"
+                            android:id="@+id/pdfViewer"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_margin="10dp"

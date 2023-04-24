@@ -4,16 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-
-
-public class EpubReaderActivity extends AppCompatActivity {
+public class PDFViewer extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_epub_reader);
-
-
-
+        setContentView(R.layout.activity_pdfviewer);
     }
 }

@@ -39,11 +39,11 @@ public class LandingPage extends AppCompatActivity implements View.OnClickListen
         clickSignUp.setOnClickListener(this);
         guestHomePage.setOnClickListener(this);
 
-        //animation
-
-        ImageView imageView5 = findViewById(R.id.imageView5);
-        Animation anim = AnimationUtils.loadAnimation(this, R.anim.landing_anim);
-        imageView5.setAnimation(anim);
+//        //animation
+//
+//        ImageView imageView5 = findViewById(R.id.imageView5);
+//        Animation anim = AnimationUtils.loadAnimation(this, R.anim.landing_anim);
+//        imageView5.setAnimation(anim);
 
 
         // Create the NotificationChannel
@@ -124,6 +124,7 @@ public class LandingPage extends AppCompatActivity implements View.OnClickListen
                             Intent myIntent = new Intent(LandingPage.this, MainActivity.class);
 //
                             startActivity(myIntent);
+                            dialog.dismiss();
 
 
 //                            System.out.println("Hello "+value+"! Welcome To Gibbs Library!");
@@ -132,6 +133,7 @@ public class LandingPage extends AppCompatActivity implements View.OnClickListen
 
                             Toast.makeText(LandingPage.this, "Empty Input! Please Enter your Name to confirm you are human!", Toast.LENGTH_SHORT).show();
                             System.out.println("Empty Input! Please Enter your Name to confirm you are human!");
+                            dialog.dismiss();
                         }
 
 

@@ -14,4 +14,5 @@
     <color name="yellow">#F7CD2E</color>
     <color name="grey">#24282E</color>
     <color name="lavender">#8692f7</color>
+    <color name="line_color">#000000</color>
 </resources>

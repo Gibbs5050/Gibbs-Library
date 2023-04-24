@@ -32,6 +32,7 @@
         tools:ignore="ImageContrastCheck" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/booksRecView5"
         android:layout_width="409dp"
         android:layout_height="599dp"
         android:layout_marginStart="1dp"

@@ -13,10 +13,12 @@ public class Books extends AppCompatActivity {
     private String imageUrl;
     private String shortDesc;
     private String longDesc;
+    private String bookLocation;
+    private String storeURL;
     private boolean isExpanded; //for drop down of description
 
     //constructor
-    public Books(int id, String name, String author, int pages, String imageUrl, String shortDesc, String longDesc) {
+    public Books(int id, String name, String author, int pages, String imageUrl, String shortDesc, String longDesc, String bookLocation, String storeURL ) {
         this.id = id;
         this.name = name;
         this.author = author;
@@ -24,6 +26,8 @@ public class Books extends AppCompatActivity {
         this.imageUrl = imageUrl;
         this.shortDesc = shortDesc;
         this.longDesc = longDesc;
+        this.bookLocation=bookLocation;
+        this.storeURL =  storeURL;
         this.isExpanded = false;
     }
 
@@ -65,6 +69,16 @@ public class Books extends AppCompatActivity {
         return longDesc;
     }
 
+
+    public String getBookLocation() {
+        return bookLocation;
+
+
+    }
+    public String getStoreURL() {
+        return storeURL;
+    }
+
     //create tostring
     @Override
     public String toString() {
@@ -76,7 +90,10 @@ public class Books extends AppCompatActivity {
                 ", imageUrl='" + imageUrl + '\'' +
                 ", shortDesc='" + shortDesc + '\'' +
                 ", longDesc='" + longDesc + '\'' +
+                ", bookLocation=" + bookLocation + '\'' +
+                ", storeURL=" + storeURL + '\'' +
                 '}';
+
     }
 
 //    public Books(int contentLayoutId, int id, String name, String author, int pages, String imageUrl, String shortDesc, String longDesc) {

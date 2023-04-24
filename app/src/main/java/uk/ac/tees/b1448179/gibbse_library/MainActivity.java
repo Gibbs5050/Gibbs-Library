@@ -10,6 +10,8 @@ import androidx.fragment.app.FragmentTransaction;
 import uk.ac.tees.b1448179.gibbse_library.AllFragmentsContainer.CatalogueFragment;
 import uk.ac.tees.b1448179.gibbse_library.AllFragmentsContainer.HomeFragment;
 import uk.ac.tees.b1448179.gibbse_library.AllFragmentsContainer.ProfileFragment;
+import uk.ac.tees.b1448179.gibbse_library.Notes_Activity;
+import uk.ac.tees.b1448179.gibbse_library.MyNotes.Notesfragment;
 import uk.ac.tees.b1448179.gibbse_library.databinding.ActivityMain2Binding;
 
 public class MainActivity extends AppCompatActivity {
@@ -43,6 +45,9 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case R.id.catalogueFragment:
                     replaceFragment(new CatalogueFragment());
+                    break;
+                case R.id.notesFragment:
+                    replaceFragment(new Notesfragment());
                     break;
                 case R.id.profileFragment:
                     replaceFragment(new ProfileFragment());

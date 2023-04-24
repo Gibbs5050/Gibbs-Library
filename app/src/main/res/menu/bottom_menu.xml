@@ -11,6 +11,10 @@
         android:title="Catalogue"
         android:icon="@drawable/ic_explore"/>
     <item
+        android:id="@+id/notesFragment"
+        android:title="My Notes"
+        android:icon="@drawable/ic_baseline_note_alt_1"/>
+    <item
         android:id="@+id/profileFragment"
         android:title="Profile"
         android:icon="@drawable/ic_profile"/>
