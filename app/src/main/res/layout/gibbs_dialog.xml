@@ -4,72 +4,84 @@
     android:background="@drawable/roundstyle"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/title_text_view"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#379BA8"
-        android:padding="16dp"
-        android:textAllCaps="true"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#CBE6EA"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+        android:layout_height="match_parent">
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#93DCE6" />
-
-    <TextView
-        android:id="@+id/message_text_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#CBE6EA"
-        android:padding="16dp"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="#379AA7"
-        android:textSize="16sp" />
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/darker_gray"/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:color/white"
-        android:backgroundTint="#CBE6EA"
-        android:gravity="right"
-        android:orientation="horizontal"
-        android:padding="8dp">
-
-        <TextView
-            android:id="@+id/negative_button"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
-            android:background="@drawable/roundstyle"
-            android:backgroundTint="#379AA7"
-            android:padding="10dp"
-            android:text="Cancel"
-            android:textAlignment="center"
-            android:textColor="@android:color/black"
-            android:textSize="25sp" />
+            android:orientation="vertical" >
 
-        <TextView
-            android:id="@+id/positive_button"
-            android:layout_width="78dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/roundstyle"
-            android:backgroundTint="#379AA7"
-            android:padding="10dp"
-            android:text="Ok"
-            android:textAlignment="center"
-            android:textColor="@android:color/black"
-            android:textSize="25sp" />
+            <TextView
+                android:id="@+id/title_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#379BA8"
+                android:padding="16dp"
+                android:textAllCaps="true"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#CBE6EA"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
-    </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#93DCE6" />
+
+            <TextView
+                android:id="@+id/message_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#CBE6EA"
+                android:padding="16dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#379AA7"
+                android:textSize="16sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:backgroundTint="#CBE6EA"
+                android:gravity="right"
+                android:orientation="horizontal"
+                android:padding="8dp">
+
+                <TextView
+                    android:id="@+id/negative_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/roundstyle"
+                    android:backgroundTint="#379AA7"
+                    android:padding="10dp"
+                    android:text="Cancel"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="25sp" />
+
+                <TextView
+                    android:id="@+id/positive_button"
+                    android:layout_width="78dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/roundstyle"
+                    android:backgroundTint="#379AA7"
+                    android:padding="10dp"
+                    android:text="Ok"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="25sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

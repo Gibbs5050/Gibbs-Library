@@ -116,8 +116,13 @@ public class LandingPage extends AppCompatActivity implements View.OnClickListen
                     @Override
                     public void onClick(View v) {
                         // handle submit button click against robot
-                        String value = inputEditText.getText().toString();
-                        if (value != null) {
+                        String value = inputEditText.getText().toString().trim();
+
+                        if(value.isEmpty()){
+                            inputEditText.setError("Your Name is required!");
+                            inputEditText.requestFocus();
+                            return;
+                        }else {
 
                             Toast.makeText(LandingPage.this, "Hello "+value+"!! :) \n Welcome To Gibbs Library!   :)", Toast.LENGTH_SHORT).show();
 
@@ -126,49 +131,28 @@ public class LandingPage extends AppCompatActivity implements View.OnClickListen
                             startActivity(myIntent);
                             dialog.dismiss();
 
-
-//                            System.out.println("Hello "+value+"! Welcome To Gibbs Library!");
-//                            dialog.dismiss();
-                        } else if (value == ""){
-
-                            Toast.makeText(LandingPage.this, "Empty Input! Please Enter your Name to confirm you are human!", Toast.LENGTH_SHORT).show();
-                            System.out.println("Empty Input! Please Enter your Name to confirm you are human!");
-                            dialog.dismiss();
                         }
 
-
-
+//                        if (value != null) {
+////                            Toast.makeText(LandingPage.this, "Hello "+value+"!! :) \n Welcome To Gibbs Library!   :)", Toast.LENGTH_SHORT).show();
+////
+////                            Intent myIntent = new Intent(LandingPage.this, MainActivity.class);
+//////
+////                            startActivity(myIntent);
+////                            dialog.dismiss();
+//
+//
+//
+////                            System.out.println("Hello "+value+"! Welcome To Gibbs Library!");
+////                            dialog.dismiss();
+//                        } else if (value == ""){
+//
+//                            Toast.makeText(LandingPage.this, "Empty Input! Please Enter your Name to confirm you are human!", Toast.LENGTH_SHORT).show();
+//                            dialog.dismiss();
+//                        }
                     }
                 });
-
-//
-//                positiveButton.setOnClickListener(new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View v) {
-//                        // handle intent positive button click
-//                        Intent myIntent = new Intent(HomeFragment.this, SearchResponse.class);
-////                        myIntent.putExtra("url","https://google.com/");//show web view
-//                        startActivity(myIntent);
-////                        HomeFragment.this.startActivity(myIntent);
-//                    }
-//                });
-
-            //notify
-
-//                NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "LibraryGuest")
-//                        .setSmallIcon(R.drawable.ic_notifyy_foreground)
-//                        .setContentTitle("Guest Alert!!")
-//                        .setContentText("Gibbs Library has been accessed without login")
-//                        .setPriority(NotificationCompat.PRIORITY_DEFAULT);
-//                NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
-//                int notificationId = 1; // Unique id for the notification
-//                notificationManager.notify(notificationId, builder.build());
-//                startActivity(new Intent(this,MainActivity2.class)); //redirect to homepage layout
-//                Toast.makeText(LandingPage.this, "Welcome to Gibbs Library!", Toast.LENGTH_SHORT).show();
-
                 break;
-
-
             default:
                 throw new IllegalStateException("Unexpected value: " + v.getId());
         }

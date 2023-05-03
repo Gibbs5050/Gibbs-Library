@@ -39,7 +39,6 @@ import com.google.firebase.auth.FirebaseAuth;
 import java.util.ArrayList;
 
 import uk.ac.tees.b1448179.gibbse_library.AllBooksActivity;
-import uk.ac.tees.b1448179.gibbse_library.BookActivity;
 import uk.ac.tees.b1448179.gibbse_library.BookRecViewAdapter;
 import uk.ac.tees.b1448179.gibbse_library.BookUtil;
 import uk.ac.tees.b1448179.gibbse_library.Books;
@@ -70,6 +69,7 @@ public class HomeFragment extends Fragment {
     EditText buttonSearch;
     Button exploreButton;
     ImageView search_bar;
+    CardView trendingNews;
 
     @SuppressLint("MissingInflatedId")
     @Nullable
@@ -104,10 +104,13 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        trendingNews = v.findViewById(R.id.trendingNews);
+        trendingNews.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-
-
-
+            }
+        });
 
         //Initialize the instance of AllBooksActivity
         allBooksActivity = new AllBooksActivity();
@@ -164,57 +167,16 @@ public class HomeFragment extends Fragment {
             @SuppressLint("ResourceType")
             @Override
             public void onClick(View v) {
-                //create a dialog prompt
-                AlertDialog.Builder builder = new AlertDialog.Builder(HomeFragment.this.getActivity());
-                View customLayout = getLayoutInflater().inflate(R.layout.gibbs_dialog, null); //use designed layout as custom layout
-                builder.setView(customLayout);
-                //customise dialog layout
-                TextView titleTextView = customLayout.findViewById(R.id.title_text_view);
-                TextView messageTextView = customLayout.findViewById(R.id.message_text_view);
-                TextView negativeButton = customLayout.findViewById(R.id.negative_button);
-                TextView positiveButton = customLayout.findViewById(R.id.positive_button);
-
-                titleTextView.setText("Redirecting...");
-                messageTextView.setText("Explore Library dictionary" +
-                        " to learn new words or continue to book search? " +
-                        "(Click cancel to go to dictionary)");
-
-                //create and initialize dialog
-                AlertDialog dialog = builder.create();
-                dialog.show();
-
-                negativeButton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        // handle negative button click
 
 
-                        Intent myIntent = new Intent(HomeFragment.this.getActivity(), DictionaryActivity.class);
-//                myIntent.putExtra(query,query);//show web view
-                        startActivity(myIntent);
-                        dialog.dismiss();
-                    }
-                });
+                // handle intent positive button click
+                String value = buttonSearch.getText().toString();
 
-
-                positiveButton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        // handle intent positive button click
-                        String value = buttonSearch.getText().toString();
-
-                        Intent myIntent = new Intent(HomeFragment.this.getActivity(), WebSwitchActivity.class);
-                        myIntent.putExtra("url","https://www.google.com/search?tbm=bks&q="+ value);//show web view
-                        startActivity(myIntent);
-//                        HomeFragment.this.startActivity(myIntent);
-                        dialog.dismiss();
-                    }
-                });
+                Intent myIntent = new Intent(HomeFragment.this.getActivity(), WebSwitchActivity.class);
+                myIntent.putExtra("url","https://www.google.com/search?tbm=bks&q="+ value);//show web view
+                startActivity(myIntent);
             }
         });
-
-
-
 
 //                .setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -567,12 +529,17 @@ public class HomeFragment extends Fragment {
         });
 
         //set up trending books find
-        CardView trendingBooks = v.findViewById(R.id.trendingBooks);
+        CardView trendingBooks = v.findViewById(R.id.trendingNews);
         trendingBooks.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myIntent = new Intent(HomeFragment.this.getActivity(), AllBooksActivity.class);
-                HomeFragment.this.startActivity(myIntent); //implement the intent ie switch to the fragment required
+
+                // handle button click
+//                String value = buttonSearch.getText().toString();
+
+                Intent myIntent = new Intent(HomeFragment.this.getActivity(), WebSwitchActivity.class);
+                myIntent.putExtra("url","https://www.bbc.co.uk/news");//show web view
+                startActivity(myIntent);
             }
         });
 
@@ -608,8 +575,51 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                Intent MyIntent= new Intent(HomeFragment.this.getActivity(),FindMe.class);
-                startActivity(MyIntent);
+                //create a dialog prompt
+                AlertDialog.Builder builder = new AlertDialog.Builder(HomeFragment.this.getActivity());
+                View customLayout = getLayoutInflater().inflate(R.layout.gibbs_dialog, null); //use designed layout as custom layout
+                builder.setView(customLayout);
+                //customise dialog layout
+                TextView titleTextView = customLayout.findViewById(R.id.title_text_view);
+                TextView messageTextView = customLayout.findViewById(R.id.message_text_view);
+                TextView negativeButton = customLayout.findViewById(R.id.negative_button);
+                TextView positiveButton = customLayout.findViewById(R.id.positive_button);
+
+                titleTextView.setText("About Us");
+                messageTextView.setText("Welcome to our library app! Our mission is to provide you with a comprehensive and user-friendly platform to access different books from various library databases. Our app offers a range of features to help you discover new books, keep track of your reading progress, and improve your overall reading experience. Here's what you can expect:\n" +
+                        "\n" +
+                        "Access to Multiple Library Databases: Our app offers a wide range of books from different library databases. You can browse through our catalogue and choose from various categories such as fiction, non-fiction, history, science, and more.\n" +
+                        "\n" +
+                        "Location Spotting: We know how important it is to find the perfect spot to read, which is why our app helps you find the nearest library or bookstore where you can borrow or purchase the books you need.\n" +
+                        "\n" +
+                        "News and Updates: Stay up-to-date with the latest news and trends in the literary world with our news section. We curate articles and reviews from reputable sources to keep you informed and engaged.\n" +
+                        "\n" +
+                        "Note-taking: Our app offers a built-in note-taking feature, so you can jot down your thoughts, ideas, and favorite quotes as you read. You can easily organize your notes by book, chapter, or topic.\n" +
+                        "\n" +
+                        "Dictionary: If you come across a new word or phrase while reading, our app has a built-in dictionary feature that allows you to quickly look up the definition and expand your vocabulary.\n" +
+                        "\n" +
+                        "Multiple Selections: Our app lets you choose from different options to customize your reading experience. You can either search through our catalogue or access books stored on your device through the file manager.\n" +
+                        "\n" +
+                        "We hope you enjoy using our library app and that it helps you explore new worlds and ideas through the power of reading.");
+
+                //create and initialize dialog
+                AlertDialog dialog = builder.create();
+                dialog.show();
+
+                negativeButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        // handle negative button click
+                        dialog.dismiss();
+                    }
+                });
+                positiveButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        // handle intent positive button click
+                      dialog.dismiss();
+                    }
+                });
             }
         });
 
@@ -627,18 +637,33 @@ public class HomeFragment extends Fragment {
 //        }
 //    });
 
-        //set up pdf reader
 
-        CardView pdfReader = v.findViewById(R.id.pdfViewer);
+        //set up notes
+
+        CardView myNotes = v.findViewById(R.id.myNotes);
+        myNotes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                // handle intent click
+//
+//
+//                Intent myIntent = new Intent(HomeFragment.this.getActivity(), Notesfragment.class);
+//                HomeFragment.this.startActivity(myIntent);
+
+            }
+        });
+
+
+
+        CardView pdfReader = v.findViewById(R.id.ebookViewer);
         pdfReader.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 // handle intent positive button click
-                Intent i = new Intent(allBooksActivity.getApplicationContext(), PDFViewer.class);
-//                Intent i = new Intent( getA HomeFragment.this.getActivity(), PDFViewer.class);
-//                myIntent.putExtra("url","https://google.com/");//show web view
-                startActivity(i);
+                Intent myIntent = new Intent(HomeFragment.this.getActivity(), PDFViewer.class);
+                HomeFragment.this.startActivity(myIntent);
 
             }
         });

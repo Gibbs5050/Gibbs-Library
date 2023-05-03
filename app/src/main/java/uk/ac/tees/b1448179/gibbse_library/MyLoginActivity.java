@@ -2,8 +2,11 @@ package uk.ac.tees.b1448179.gibbse_library;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
@@ -86,10 +89,78 @@ public class MyLoginActivity extends AppCompatActivity implements View.OnClickLi
                 forgotPassword.setTextColor(getResources().getColor(R.color.amber)); //change colour on click
                 break;
             case R.id.loginHomePage2:
-                startActivity(new Intent(this, MainActivity.class)); //redirect to homepage layout
-                Toast.makeText(MyLoginActivity.this, "Welcome to Gibbs Library!", Toast.LENGTH_SHORT).show();
-                guestHomePage1.setTextColor(getResources().getColor(R.color.amber)); //change colour on click
+
+                //create notification of click access
+
+                NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "LibraryGuest")
+                        .setSmallIcon(R.drawable.ic_notifyy_foreground)
+                        .setContentTitle("Guest Alert!!")
+                        .setContentText("Gibbs Library has been accessed without login")
+                        .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+                NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
+                int notificationId = 1; // Unique id for the notification
+                notificationManager.notify(notificationId, builder.build());
+
+
+                //create a dialog prompt
+                AlertDialog.Builder builder1 = new AlertDialog.Builder(MyLoginActivity.this);
+                View customLayout = getLayoutInflater().inflate(R.layout.activity_input_popup, null); //use designed layout as custom layout
+                builder1.setView(customLayout);
+                //customise dialog layout
+                // Get the UI elements from the layout
+                EditText inputEditText = customLayout.findViewById(R.id.nameInput);
+                Button submitButton = customLayout.findViewById(R.id.submitButton);
+
+                //create and initialize dialog
+                AlertDialog dialog = builder1.create();
+                dialog.show();
+
+                submitButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        // handle submit button click against robot
+                        String value = inputEditText.getText().toString().trim();
+
+                        if(value.isEmpty()){
+                            inputEditText.setError("Your Name is required!");
+                            inputEditText.requestFocus();
+                            return;
+                        }else {
+
+                            Toast.makeText(MyLoginActivity.this, "Hello "+value+"!! :) \n Welcome To Gibbs Library!   :)", Toast.LENGTH_SHORT).show();
+
+                            Intent myIntent = new Intent(MyLoginActivity.this, MainActivity.class);
+//
+                            startActivity(myIntent);
+                            dialog.dismiss();
+
+                        }
+
+//                        if (value != null) {
+////                            Toast.makeText(LandingPage.this, "Hello "+value+"!! :) \n Welcome To Gibbs Library!   :)", Toast.LENGTH_SHORT).show();
+////
+////                            Intent myIntent = new Intent(LandingPage.this, MainActivity.class);
+//////
+////                            startActivity(myIntent);
+////                            dialog.dismiss();
+//
+//
+//
+////                            System.out.println("Hello "+value+"! Welcome To Gibbs Library!");
+////                            dialog.dismiss();
+//                        } else if (value == ""){
+//
+//                            Toast.makeText(LandingPage.this, "Empty Input! Please Enter your Name to confirm you are human!", Toast.LENGTH_SHORT).show();
+//                            dialog.dismiss();
+//                        }
+                    }
+                });
                 break;
+//
+//                startActivity(new Intent(this, MainActivity.class)); //redirect to homepage layout
+//                Toast.makeText(MyLoginActivity.this, "Welcome to Gibbs Library!", Toast.LENGTH_SHORT).show();
+//                guestHomePage1.setTextColor(getResources().getColor(R.color.amber)); //change colour on click
+//                break;
 
             default:
                 throw new IllegalStateException("Unexpected value: " + v.getId());

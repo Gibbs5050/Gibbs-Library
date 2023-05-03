@@ -1,4 +1,4 @@
-package uk.ac.tees.b1448179.gibbse_library.MyNotes;
+package uk.ac.tees.b1448179.gibbse_library.AllFragmentsContainer;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -10,7 +10,6 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.PopupMenu;
 
 import androidx.annotation.NonNull;
@@ -25,10 +24,13 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.Query;
 
 import uk.ac.tees.b1448179.gibbse_library.MyLoginActivity;
+import uk.ac.tees.b1448179.gibbse_library.MyNotes.Note;
+import uk.ac.tees.b1448179.gibbse_library.MyNotes.NoteAdapter;
+import uk.ac.tees.b1448179.gibbse_library.MyNotes.Utility;
 import uk.ac.tees.b1448179.gibbse_library.Notes_Activity;
 import uk.ac.tees.b1448179.gibbse_library.R;
 
-public class Notesfragment extends Fragment {
+public class NotesFragment extends Fragment {
 
     FloatingActionButton addNoteBtn;
     RecyclerView recyclerView;
@@ -48,21 +50,21 @@ public class Notesfragment extends Fragment {
         addNoteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Notesfragment.this.getActivity(), Notes_Activity.class));
+                startActivity(new Intent(NotesFragment.this.getActivity(), Notes_Activity.class));
 
             }
         });
         Animation anim = AnimationUtils.loadAnimation(this.getContext(), R.anim.landing_anim);
         addNoteBtn.setAnimation(anim);
 
-//        addNoteBtn.setOnClickListener((view)-> startActivity(new Intent(Notesfragment.this.getActivity(),NotesActivity.class)) );
+//        addNoteBtn.setOnClickListener((view)-> startActivity(new Intent(NotesFragment.this.getActivity(),NotesActivity.class)) );
         menuBtn.setOnClickListener((view)->showMenu() );
         setupRecyclerView();
         return v;
     }
 
     void showMenu(){
-        PopupMenu popupMenu  = new PopupMenu(Notesfragment.this.getActivity(),menuBtn);
+        PopupMenu popupMenu  = new PopupMenu(NotesFragment.this.getActivity(),menuBtn);
         popupMenu.getMenu().add("Logout");
         popupMenu.show();
         popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
@@ -70,7 +72,7 @@ public class Notesfragment extends Fragment {
             public boolean onMenuItemClick(MenuItem menuItem) {
                 if(menuItem.getTitle()=="Logout"){
                     FirebaseAuth.getInstance().signOut();
-                    startActivity(new Intent(Notesfragment.this.getActivity(), MyLoginActivity.class));
+                    startActivity(new Intent(NotesFragment.this.getActivity(), MyLoginActivity.class));
                     getActivity().finish();
                     return true;
                 }
@@ -101,6 +103,7 @@ public class Notesfragment extends Fragment {
         noteAdapter.stopListening();
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     @Override
     public void onResume() {
         super.onResume();
